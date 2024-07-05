@@ -1,1 +1,0 @@
-This is the uncompiled C-source code to pre-compute the coefficients for the orthogonal expansion. Documentation is included within the code itself.
