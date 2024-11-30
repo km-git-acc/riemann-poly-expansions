@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.6)  25 NOV 2024 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.6)  30 NOV 2024 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -720,123 +720,123 @@ LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10.95> not available
 
 [1{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2]
-<Askeyschemenew.jpeg, id=108, 1543.7675pt x 1856.9375pt>
+<Askeyschemenew.jpeg, id=108, 1541.76pt x 1891.065pt>
 File: Askeyschemenew.jpeg Graphic file (type jpg)
 <use Askeyschemenew.jpeg>
 Package pdftex.def Info: Askeyschemenew.jpeg  used on input line 228.
-(pdftex.def)             Requested size: 452.9679pt x 544.84503pt.
- [3 <./Askeyschemenew.jpeg>] [4]
+(pdftex.def)             Requested size: 452.9679pt x 555.57979pt.
+ [3 <./Askeyschemenew.jpeg>] [4] [5] [6]
+Overfull \hbox (8.87671pt too wide) detected at line 360
+[]
+ []
+
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 283.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 283.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 283.
-
-[5] [6] [7]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 400.
+(hyperref)                removing `math shift' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Xi' on input line 400.
+(hyperref)                removing `\Xi' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 400.
+(hyperref)                removing `math shift' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 400.
+(hyperref)                removing `math shift' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Xi' on input line 400.
+(hyperref)                removing `\Xi' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 400.
+(hyperref)                removing `subscript' on input line 392.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 400.
+(hyperref)                removing `math shift' on input line 392.
 
 [8]
 <PolyaDeBruijnFlowdouble.jpeg, id=209, 2314.6475pt x 949.5475pt>
 File: PolyaDeBruijnFlowdouble.jpeg Graphic file (type jpg)
 <use PolyaDeBruijnFlowdouble.jpeg>
-Package pdftex.def Info: PolyaDeBruijnFlowdouble.jpeg  used on input line 440.
+Package pdftex.def Info: PolyaDeBruijnFlowdouble.jpeg  used on input line 432.
 (pdftex.def)             Requested size: 452.9679pt x 185.82025pt.
  [9 <./PolyaDeBruijnFlowdouble.jpeg>]
 LaTeX Font Info:    Trying to load font information for TS1+txr on input line 4
-84.
+76.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-) [10]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [11]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [12]
-Overfull \hbox (19.05269pt too wide) in paragraph at lines 575--585
+) [10] [11]
+Overfull \hbox (19.05269pt too wide) in paragraph at lines 556--565
  [] 
  []
 
-[13]
-Underfull \hbox (badness 2057) in paragraph at lines 607--608
+[12]
+Underfull \hbox (badness 2057) in paragraph at lines 586--587
 []\OT1/txr/m/n/9 Dobner, A, \OT1/txr/m/it/9 A proof of New-man's Con-jec-ture f
 or the ex-tended Sel-berg class\OT1/txr/m/n/9 , Acta Arith-metica 201 (2021),
  []
 
 
-Underfull \hbox (badness 4913) in paragraph at lines 617--618
+Underfull \hbox (badness 4913) in paragraph at lines 596--597
 []\OT1/txr/m/n/9 Dolph Dwars, Kalpesh Much-hal, \OT1/txr/m/it/9 GitHub en-vi-ro
 n-ment with all code, data and graphs of this project\OT1/txr/m/n/9 ,
  []
 
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <20.74> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 621.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 600.
 LaTeX Font Info:    Font shape `OT1/txr/b/n' in size <10> not available
-(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 643.
+(Font)              Font shape `OT1/txr/bx/n' tried instead on input line 622.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 626--644
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 605--623
 [] 
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [15]
-<HermiteFlowdouble.jpeg, id=279, 1961.3275pt x 837.1275pt>
+<HermiteFlowdouble.jpeg, id=273, 1961.3275pt x 837.1275pt>
 File: HermiteFlowdouble.jpeg Graphic file (type jpg)
 <use HermiteFlowdouble.jpeg>
-Package pdftex.def Info: HermiteFlowdouble.jpeg  used on input line 663.
+Package pdftex.def Info: HermiteFlowdouble.jpeg  used on input line 642.
 (pdftex.def)             Requested size: 452.9679pt x 193.32722pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 646--666
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 625--645
 [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16 <./HermiteFlowdouble.jpeg>]
-<LaguerreFlowdouble.jpeg, id=295, 1969.3575pt x 809.0225pt>
+ [15 <./HermiteFlowdouble.jpeg>]
+<LaguerreFlowdouble.jpeg, id=289, 1969.3575pt x 809.0225pt>
 File: LaguerreFlowdouble.jpeg Graphic file (type jpg)
 <use LaguerreFlowdouble.jpeg>
-Package pdftex.def Info: LaguerreFlowdouble.jpeg  used on input line 685.
+Package pdftex.def Info: LaguerreFlowdouble.jpeg  used on input line 664.
 (pdftex.def)             Requested size: 452.9679pt x 186.07126pt.
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 648--667
+[] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./LaguerreFlowdouble.jpeg>]
+<MeixPollFlowdouble.jpeg, id=303, 1969.3575pt x 817.0525pt>
+File: MeixPollFlowdouble.jpeg Graphic file (type jpg)
+<use MeixPollFlowdouble.jpeg>
+Package pdftex.def Info: MeixPollFlowdouble.jpeg  used on input line 685.
+(pdftex.def)             Requested size: 452.9679pt x 187.91812pt.
 
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 669--688
 [] 
@@ -845,157 +845,101 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 669--688
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17 <./LaguerreFlowdouble.jpeg>]
-<BesselFlowdouble.jpeg, id=311, 1969.3575pt x 817.0525pt>
-File: BesselFlowdouble.jpeg Graphic file (type jpg)
-<use BesselFlowdouble.jpeg>
-Package pdftex.def Info: BesselFlowdouble.jpeg  used on input line 706.
-(pdftex.def)             Requested size: 452.9679pt x 187.91812pt.
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 690--709
-[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18 <./BesselFlowdouble.jpeg>]
-<MeixPollFlowdouble.jpeg, id=325, 1969.3575pt x 817.0525pt>
-File: MeixPollFlowdouble.jpeg Graphic file (type jpg)
-<use MeixPollFlowdouble.jpeg>
-Package pdftex.def Info: MeixPollFlowdouble.jpeg  used on input line 727.
-(pdftex.def)             Requested size: 452.9679pt x 187.91812pt.
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 711--730
-[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19 <./MeixPollFlowdouble.jpeg>]
-<JacobiFlowdouble.jpeg, id=342, 1969.3575pt x 823.075pt>
-File: JacobiFlowdouble.jpeg Graphic file (type jpg)
-<use JacobiFlowdouble.jpeg>
-Package pdftex.def Info: JacobiFlowdouble.jpeg  used on input line 748.
-(pdftex.def)             Requested size: 452.9679pt x 189.30327pt.
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 732--751
-[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20 <./JacobiFlowdouble.jpeg>]
-<PseudoJacobiFlowdouble.jpeg, id=359, 1969.3575pt x 823.075pt>
-File: PseudoJacobiFlowdouble.jpeg Graphic file (type jpg)
-<use PseudoJacobiFlowdouble.jpeg>
-Package pdftex.def Info: PseudoJacobiFlowdouble.jpeg  used on input line 769.
-(pdftex.def)             Requested size: 452.9679pt x 189.30327pt.
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 753--772
-[] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21 <./PseudoJacobiFlowdouble.jpeg>]
-<ContDualHahnFlowdouble.jpeg, id=377, 1969.3575pt x 839.135pt>
+ [17 <./MeixPollFlowdouble.jpeg>]
+<ContDualHahnFlowdouble.jpeg, id=319, 1969.3575pt x 839.135pt>
 File: ContDualHahnFlowdouble.jpeg Graphic file (type jpg)
 <use ContDualHahnFlowdouble.jpeg>
-Package pdftex.def Info: ContDualHahnFlowdouble.jpeg  used on input line 792.
+Package pdftex.def Info: ContDualHahnFlowdouble.jpeg  used on input line 708.
 (pdftex.def)             Requested size: 452.9679pt x 192.99698pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 774--795
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 690--711
 [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <./ContDualHahnFlowdouble.jpeg>]
-<ContHahnFlowdouble.jpeg, id=395, 1969.3575pt x 839.135pt>
+ [18 <./ContDualHahnFlowdouble.jpeg>]
+<ContHahnFlowdouble.jpeg, id=337, 1969.3575pt x 839.135pt>
 File: ContHahnFlowdouble.jpeg Graphic file (type jpg)
 <use ContHahnFlowdouble.jpeg>
-Package pdftex.def Info: ContHahnFlowdouble.jpeg  used on input line 816.
+Package pdftex.def Info: ContHahnFlowdouble.jpeg  used on input line 732.
 (pdftex.def)             Requested size: 452.9679pt x 192.99698pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 797--819
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 713--735
 [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23 <./ContHahnFlowdouble.jpeg>]
-<WilsonFlowdouble.jpeg, id=414, 1969.3575pt x 839.135pt>
+ [19 <./ContHahnFlowdouble.jpeg>]
+<WilsonFlowdouble.jpeg, id=357, 1969.3575pt x 839.135pt>
 File: WilsonFlowdouble.jpeg Graphic file (type jpg)
 <use WilsonFlowdouble.jpeg>
-Package pdftex.def Info: WilsonFlowdouble.jpeg  used on input line 840.
+Package pdftex.def Info: WilsonFlowdouble.jpeg  used on input line 756.
 (pdftex.def)             Requested size: 452.9679pt x 192.99698pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 821--843
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 737--759
 [] 
  []
 
 
 Underfull \vbox (badness 1810) has occurred while \output is active []
 
- [24 <./WilsonFlowdouble.jpeg>]
+ [20 <./WilsonFlowdouble.jpeg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 849.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Xi' on input line 849.
+(hyperref)                removing `math shift' on input line 765.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `\Xi' on input line 765.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `math shift' on input line 765.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Xi' on input line 849.
+(hyperref)                removing `math shift' on input line 765.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 849.
+(hyperref)                removing `\Xi' on input line 765.
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 857--888
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 765.
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 773--804
 [] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [25]
-[26] [27] [28]
-Overfull \hbox (7.3516pt too wide) detected at line 1046
+ [21]
+[22] [23] [24]
+Overfull \hbox (7.3516pt too wide) detected at line 962
 []
  []
 
+[25]
+Overfull \hbox (26.70592pt too wide) detected at line 991
+[]
+ []
+
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28]
 [29]
-Overfull \hbox (26.70592pt too wide) detected at line 1075
-[]
- []
-
-[30]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [32]
-[33]
-Overfull \hbox (5.52295pt too wide) in paragraph at lines 1194--1195
+Overfull \hbox (5.52295pt too wide) in paragraph at lines 1110--1111
 [][]\OT1/txr/bx/n/10 Proposition B.5. []\OT1/txr/m/it/10 The co-ef-fi-cients of
  the Wil-son poly-no-mial ex-pan-sion of $[] \OML/txmi/m/it/10 t[]$ \OT1/txr/m/
 it/10 with pa-ram-e-ters $\OT1/txr/m/n/10 ([]\OML/txmi/m/it/10 ; \OT1/txr/m/n/1
@@ -1003,33 +947,33 @@ it/10 with pa-ram-e-ters $\OT1/txr/m/n/10 ([]\OML/txmi/m/it/10 ; \OT1/txr/m/n/1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1194--1195
+Underfull \hbox (badness 10000) in paragraph at lines 1110--1111
 
  []
 
-[34
+[30
 pdfTeX warning (ext4): destination with the same identifier (name{equation.B.10
 9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1214 \end{align}
+l.1130 \end{align}
                   ]
 LaTeX Font Info:    Trying to load font information for OT1+txtt on input line 
-1229.
+1145.
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/txfonts/ot1txtt.fd
 File: ot1txtt.fd 2000/12/15 v3.1
-) [35]
+) [31]
 (./VisualisingtheflowsoforthogonalpolynomialexpansionsRiemannXiv2.aux)
 Package rerunfilecheck Info: File `Visualisingtheflowsoforthogonalpolynomialexp
 ansionsRiemannXiv2.out' has not changed.
-(rerunfilecheck)             Checksum: F572C9A48D34C3A609D4B3650923EE17;4487.
+(rerunfilecheck)             Checksum: FC3A6C1893869D6155A837297D518C6A;4542.
  ) 
 Here is how much of TeX's memory you used:
- 15166 strings out of 478268
- 243431 string characters out of 5846348
- 646166 words of memory out of 5000000
- 32577 multiletter control sequences out of 15000+600000
+ 15101 strings out of 478268
+ 242302 string characters out of 5846348
+ 643655 words of memory out of 5000000
+ 32556 multiletter control sequences out of 15000+600000
  524694 words of font info for 158 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  69i,16n,77p,1179b,473s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1048,10 +992,10 @@ b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr
 live/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on VisualisingtheflowsoforthogonalpolynomialexpansionsRiemannXiv
-2.pdf (35 pages, 3448853 bytes).
+2.pdf (31 pages, 2541362 bytes).
 PDF statistics:
- 831 PDF objects out of 1000 (max. 8388607)
- 688 compressed objects within 7 object streams
- 357 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 631 compressed objects within 7 object streams
+ 316 named destinations out of 1000 (max. 500000)
+ 169 words of extra memory for PDF output out of 10000 (max. 10000000)
 

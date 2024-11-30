@@ -255,18 +255,18 @@ with $M_n \verifiedeq \int_\mathbb{R}\phi_n(x)^2\,w(x)\,\mathrm{d}x$. The quanti
 Swapping the summation and integration in the Poisson flow (assuming Fubini's theorem applies for $F(t)$), recovers the underlying Fourier series expansion into a family of orthogonal polynomials $\phi$:
 \begin{align}
  X^\phi_z(t) &\verifiedeq \sum_{n=0}^\infty z^n\,\gamma_n\,\phi_n(t) \\
- \gamma_n &\verifiedeq \frac{1}{M_n}\,\int_{-\infty}^\infty \Xi(x)\,\phi_n(x)\,w(x) \,\mathrm{d}x
+ \gamma_n &\verifiedeq \frac{1}{M_n}\,\int_{-\infty}^\infty F(x)\,\phi_n(x)\,w(x) \,\mathrm{d}x
 \end{align}
 
 It is this generic structure that we decided to use for our computations, since it allows for the once-off calculation of the coefficients $\gamma_n$ for a certain set of chosen parameters for the orthogonal polynomial under study. All nine orthogonal polynomials in scope can now be expressed into a hypergeometric function and a leading factor $g_n$ that is only dependent on $n$ and the free parameters. This allows us to optimise the coefficient pre-computations a bit further:
 \begin{align}
  X^\phi_z(t) &\verifiedeq \sum_{n=0}^\infty z^n\,\gamma_n\,g_n\,{}_pF_q(n,t,\text{parms})\\
- \gamma_n &\verifiedeq  \frac{1}{M_n}\,\int_{-\infty}^\infty \Xi(x)\, g_n\,{}_pF_q(n,x, \text{parms})\,w_n(x) \,\mathrm{d}x
+ \gamma_n &\verifiedeq  \frac{1}{M_n}\,\int_{-\infty}^\infty F(x)\, g_n\,{}_pF_q(n,x, \text{parms})\,w(x) \,\mathrm{d}x
 \end{align} 
 Collecting all terms that are independent of $r$ and $t$, we will pre-compute $\gamma_n$ as follows:
 \begin{align}
  X^\phi_z(t) &\verifiedeq \sum_{n=0}^\infty z^n\,\gamma_n\,{}_pF_q(n,t, \text{parms}) \\
- \gamma_n &\verifiedeq  f_n\,\int_{-\infty}^\infty \Xi(x)\,{}_pF_q(n,x,\text{parms})\,w_n(x) \,\mathrm{d}x \qquad \text{with } f_n = \dfrac{g_n^2}{M_n} 
+ \gamma_n &\verifiedeq  f_n\,\int_{-\infty}^\infty F(x)\,{}_pF_q(n,x,\text{parms})\,w(x) \,\mathrm{d}x \qquad \text{with } f_n = \dfrac{g_n^2}{M_n} 
 \end{align} 
 \pagebreak
 
@@ -277,29 +277,29 @@ Each family of polynomials in the Askey scheme comes equipped with either a Part
 
 A critical first step for deriving the evolution law, is to apply the mapping $$z \rightarrow \exp\left(-r\,(\text{coeff-y})\right) \quad r \in \mathbb{R}. r > 0$$ where \textit{coeff-y} is the coefficient divided by $n$ of $y(x)$ in the DDE or PDE. For some polynomial families this is just $1$, however for others this can become as complex as $\exp\big(n\,(n+\text{parms})\big)$. This should be fine as long as the mapped factor continues to vary sufficiently smooth between $0$ and $1$. We have actually started using the linear variable $z$, however found that using the mapped variable $r$ clearly induces much more 'natural' flows (i.e. resembling the collision patterns of the Pólya-De Bruijn flows) for some of the more complex polynomial families. It therefore seems that this mapped distortion factor provides a more 'natural' way to describe the flow and it also directly paves the way for deriving the governing laws. A rigorous proof for this phenomenon would obviously be desired.    
 
-We will now demonstrate how this works for the Bessel-$y$ (PDE) and the Wilson (DDE) orthogonal polynomial families. The derivation of all the other families follows exactly the same lines and the results have been captured in appendix \ref{eqsused}.
+We will now demonstrate how this works for the Generalised Laguerre (PDE) and the Wilson (DDE) orthogonal polynomial families. The derivation of all the other families follows exactly the same lines and the results have been captured in appendix \ref{eqsused}.
 
-\subsection{Evolution of the zeros under the Bessel $y_n$ Poisson Flow governed by a PDE} \label{Bessellawspoissonflow}
-We start from the Bessel $y$ Poisson Flow (\ref{besflow}).
+\subsection{Evolution of the zeros under the Generalised Laguerre Poisson Flow governed by a PDE} \label{Laguerrelawspoissonflow}
+We start from the Generalised Laguerre Poisson Flow (\ref{lagflow}):
 \begin{align}
-  M(r,t)=X^{\mathcal{B}}_{r}(t;a) &\verifiedeq \sum_{n=0}^\infty \gamma_n(a)\,{}_2F_0\left([-n, n+a+1],[],-\frac{t}{2}\right)\,\exp(-r(n+a+1))^{n} \quad r \ge 0
+  M(r,t)=  X^{\mathcal{L}}_r(t;a)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a)\,{}_1F_1\left(-n, a+1,t\right)\,\exp(-nr)\quad r \ge 0
 \end{align} 
 
-For brevity, we also set $H(t) \defeq {}_2F_0\left([-n, n+a+1],[],-\frac{t}{2}\right)$. 
+For brevity, we also set $H_n(t) \defeq {}_1F_1\left(-n, a+1,t\right)$. 
 
 \begin{lemma}\label{proofBes1} The function $M(r,t)$ satisfies the partial differential equation: 
 \begin{align}
- \frac{\partial}{\partial r}M(r,t) \verifiedeq -t^2\,\frac{\partial^2}{\partial t^2}M(r,t) - \big((a+2)\,t+2\big)\,\frac{\partial }{\partial t}M(r,t)
+ \frac{\partial}{\partial r}M(r,t) \verifiedeq t\,\frac{\partial^2}{\partial t^2}M(r,t) + (a+1-t)\,\frac{\partial }{\partial t}M(r,t)
 \end{align}
 \end{lemma}
 
 \begin{proof}
-Using (\ref{besPDE}) we obtain:
+Using (\ref{lagPDE}) we obtain:
 \begin{align}
- \frac{\partial}{\partial r}M(r,t) &\verifiedeq  \frac{\partial}{\partial r}\,\left(\sum_{n=0}^\infty \gamma_n(a)\,H(t)\,\exp(-r(n+a+1))^{n}\right) \\
- &\verifiedeq \sum_{n=0}^\infty \gamma_n(a)\,H(t)\,\left(-n\,(n+a+1)\right)\,\exp(-r(n+a+1))^{n} \\
- &\verifiedeq \sum_{n=0}^\infty \gamma_n(a)\,\left(-t^2\,\frac{\partial^2}{\partial t^2}H(t)- \big((a+2)\,t+2\big)\, \frac{\partial}{\partial t}H(t)  \right)\, \exp(-r(n+a+1))^{n}\\
- &\verifiedeq-t^2\,\frac{\partial^2}{\partial t^2}M(r,t) - \big((a+2)\,t+2\big)\,\frac{\partial }{\partial t}M(r,t)
+ \frac{\partial}{\partial r}M(r,t) &\verifiedeq  \frac{\partial}{\partial r}\,\left(\sum_{n=0}^\infty \gamma_n(a)\,H_n(t)\,\exp(-nr)\right) \\
+ &\verifiedeq \sum_{n=0}^\infty \gamma_n(a)\,H_n(t)\,\left(-n\right)\,\exp(-nr) \\
+ &\verifiedeq \sum_{n=0}^\infty \gamma_n(a)\,\left(t\,\frac{\partial^2}{\partial t^2}H_n(t)+ (a+1-t)\, \frac{\partial}{\partial t}H_n(t)  \right)\, \exp(-nr)\\
+ &\verifiedeq t\,\frac{\partial^2}{\partial t^2}M(r,t) + (a+1-t)\,\frac{\partial }{\partial t}M(r,t)
 \end{align}
 \end{proof}
 
@@ -307,7 +307,7 @@ Now let $z_k(r)$ be the $k$-th simple zero of the flow $M(r,t)$ for a some fixed
  
 \begin{lemma}\label{proofBes2} The evolution of the zeros under the flow $M(r,t)$ is governed by the following equation:
 \begin{align}
- \frac{\mathrm{d}}{\mathrm{d} r}z_k(r) \verifiedeq2\, z_k(r)^2\,\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} +(a+2)\,z_k(r)+2
+ \frac{\mathrm{d}}{\mathrm{d} r}z_k(r) \verifiedeq -2\, z_k(r)\,\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} +\,z_k(r)-(a+1)
 \end{align}
 \end{lemma}
 where $j \in \mathbb{Z}\backslash\{0\}, j \ne k$. The prime indicates $j$ and $-j$ terms should be summed together (the remaining $k=-j$ term is summed separately).
@@ -317,21 +317,17 @@ We start from the observation that:
 M(r,z_k(r)) &\verifiedeq 0 \\
 \frac{\mathrm{d}}{\mathrm{d} r} \big(M(r,z_k(r))\big) &\verifiedeq 0 \\
 \frac{\partial M}{\partial r}(r,z_k(r))+ \frac{\partial M}{\partial t}(r,z_k(r))\,\frac{\mathrm{d} z_k(r)}{\mathrm{d} r} &\verifiedeq 0 \\
-t^2\,\frac{\partial^2}{\partial z_k(r)^2}M(r,z_k(r) + \big((a+2)\,z_k(r)+2\big)\,\frac{\partial }{\partial t}M(r,z_k(r))  &\verifiedeq \frac{\partial}{\partial t}M(r,z_k(r))\,\frac{\mathrm{d}}{\mathrm{d} r}z_k(r)
+-z_k(r)\,\frac{\partial^2}{\partial z_k(r)^2}M(r,z_k(r)) + (z_k(r)-(a+1))\,\frac{\partial }{\partial t}M(r,z_k(r))  &\verifiedeq \frac{\partial}{\partial t}M(r,z_k(r))\,\frac{\mathrm{d}}{\mathrm{d} r}z_k(r)
 \end{align}
-
 Since we assumed $z_k(r)$ to be simple, its derivative with respect to $t$ can't be zero, hence we can rewrite this as follows:
-
 \begin{align}
-\frac{\mathrm{d} }{\mathrm{d} r}z_k(r) &\verifiedeq \dfrac{t^2\,\frac{\partial^2}{\partial t^2}M(r,z_k(r)) + \big((a+2)\,t+2\big)\,\frac{\partial }{\partial t}M(r,z_k(r))}{ \frac{\partial}{\partial t}M(r,z_k(r))} \\
-&\verifiedeq z_k(r)^2\,\dfrac{\frac{\partial^2}{\partial t^2}M(r,z_k(r))}{ \frac{\partial}{\partial t}M(r,z_k(r))}  + (a+2)\,z_k(r)+2 \label{secondder}
+\frac{\mathrm{d} }{\mathrm{d} r}z_k(r) &\verifiedeq \dfrac{-z_k(r)\,\frac{\partial^2}{\partial t^2}M(r,z_k(r)) + (z_k(r)-(a+1))\,\frac{\partial }{\partial t}M(r,z_k(r))}{ \frac{\partial}{\partial t}M(r,z_k(r))} \\
+&\verifiedeq -z_k(r)\,\dfrac{\frac{\partial^2}{\partial t^2}M(r,z_k(r))}{ \frac{\partial}{\partial t}M(r,z_k(r))}  + \,z_k(r)-(a+1)\label{secondder}
 \end{align}
-
 From Taylor expansion of $M(r,z_k(r)), \frac{\partial}{\partial t}M(r,z_k(r))$ and $\frac{\partial^2}{\partial t^2}M(r,z_k(r))$ around the simple zero $z_k$ we get:
 \begin{align}\label{taylor}
  \dfrac{\frac{\partial^2}{\partial t^2}M(r,z_k(r))}{\frac{\partial}{\partial t}M(r,z_k(r))} \verifiedeq 2\,\lim_{z\to z_k} \left(\dfrac{\frac{\partial}{\partial t}M(r,z)}{M(r,z)} -\frac{1}{z - z_k(r)} \right)
 \end{align}
-
 We also have the Hadamard product: 
 \begin{align}
   M(r,z) \verifiedeq M(r,0)\prod_j^{'}\left(1-\frac{z}{z_j}\right)
@@ -345,31 +341,35 @@ Plugging this into (\ref{taylor}) and then into (\ref{secondder}) gives the resu
 \subsection{Evolution of the zeros under the Wilson Poisson Flow governed by a DDE} \label{Wilsonlawspoissonflow}
 We start from the Wilson Poisson Flow (\ref{wilflow}): 
 \begin{align}
-  M(r,t) \verifiedeq X^\mathcal{W}_{r}(t;a,b,c,d) &= \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,H(t)\,\exp(-r(n+a+b+c+d-1))^{n}
+  M(r,t) \verifiedeq X^\mathcal{W}_{r}(t;a,b,c,d) &= \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,H_n(t)\,\exp(-n(n+a+b+c+d-1)r)
 \end{align} 
-For brevity we also set $H(t) \defeq {}_4F_3\left(\left[-n, n+a+b+c+d-1,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)$.
+For brevity we also set $H_n(t) \defeq {}_4F_3\left(\left[-n, n+a+b+c+d-1,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)$.
 \begin{lemma}\label{proofWil1} The function $M(r,t) \verifiedeq X^\mathcal{W}_{r}(t;a,b,c,d)$ satisfies the differential difference equation: 
 \begin{align}
- \frac{\partial}{\partial r}M(r,t) \verifiedeq -B(t)\,M(r,t+i) +\left(B(t)+D(t)\right)M(r,t)- D(t)\,M(r,t-i) 
+ \frac{\partial}{\partial r}M(r,t) \verifiedeq -B(t)\,M(r,t+i) +\left(B(t)+D(t)\right)M(r,t)- D(t)\,M(r,t-i) \label{WilDDE}
 \end{align}
  with $B(t) \verifiedeq \dfrac{(a-it)\,(b-it)\,(c-it)\,(d-it)}{2it(2it-1)}$ and $D(t)=\dfrac{(a+it)\,(b+it)\,(c+it)\,(d+it)}{2it(2it+1)}$.
 \end{lemma}
 \begin{proof}
 Using (\ref{wildde}) we obtain:
 \begin{align}
- \frac{\partial}{\partial r}M(r,t) &\verifiedeq  \frac{\partial}{\partial r}\,\left(\sum_{n=0}^\infty \gamma_n(a)\,H(t)\,\exp(-r)^{n\,(n+a+b+c+d-11)}\right) \\
- &\verifiedeq \sum_{n=0}^\infty \gamma_n\,H(t)\,\left(-n\,(n+a+b+c+d-1)\right)\,\exp(-r)^{n\,(n+a+b+c+d-1)} \\
- &\verifiedeq \sum_{n=0}^\infty \gamma_n\,\bigg(-B(t)\,H(t+i) +\left(B(t)+D(t)\right)H(t)- D(t)\,H(t-i)\bigg)\,\exp(-r)^{n\,(n+a+b+c+d-1)}  \\
+ \frac{\partial}{\partial r}M(r,t) &\verifiedeq  \frac{\partial}{\partial r}\,\left(\sum_{n=0}^\infty \gamma_n(a)\,H_n(t)\,\exp(-n(n+a+b+c+d-1)r\right) \\
+ &\verifiedeq \sum_{n=0}^\infty \gamma_n\,H_n(t)\,\left(-n\,(n+a+b+c+d-1)\right)\,\exp(-n(n+a+b+c+d-1)r \\
+ &\verifiedeq \sum_{n=0}^\infty \gamma_n\,\bigg(-B(t)\,H_n(t+i) +\left(B(t)+D(t)\right)H_n(t)- D(t)\,H_n(t-i)\bigg)\,\exp(-n(n+a+b+c+d-1)r  \\
  &\verifiedeq-B(t)\,M(r,t+i) +\left(B(t)+D(t)\right)M(r,t)- D(t)\,M(r,t-i)
 \end{align}
 \end{proof}
 Now let $z_k(r)$ be the $k$-th simple zero of the flow $M(r,t)$ for a some fixed set of parameters $a,b,c,d$.
-\begin{lemma}\label{proofWil2} The evolution of the zeros under the Wilson Poisson flow $M(r,t)$ is governed by the following equation:
+\begin{lemma}\label{proofWil2} The evolution of the zeros under the Wilson Poisson flow for a finite version of $M(r,t)$, named $M_p(r,t)$, is governed by the following equation:
 \begin{align}
- \frac{\mathrm{d}}{\mathrm{d} r}z_k(r) \verifiedeq i\,B(z_k(r))\, \prod^{'}_{j \ne k}\left(1+ \frac{i}{z_k(r)-z_j(r)}\right) -i\,D(z_k(r))\,\prod^{'}_{j \ne k} \left(1-\frac{i}{z_k(r)-z_j(r)}\right)
+ \frac{\mathrm{d}}{\mathrm{d} r}z_k(r) \verifiedeq i\,B(z_k(r))\, \prod^{'}_{\substack{1\le j \le n \\j \ne k}}\left(1+ \frac{i}{z_k(r)-z_j(r)}\right) -i\,D(z_k(r))\,\prod^{'}_{\substack{1\le j \le n \\j \ne k}} \left(1-\frac{i}{z_k(r)-z_j(r)}\right)
 \end{align}
+where $j \in \mathbb{Z}\backslash\{0\}, j \ne k$. The prime indicates $j$ and $-j$ terms should be multiplied together (the remaining $k=-j$ term is multiplied separately). The finite entire function $M_p(r,t)$ is:
+\begin{align}
+M_p(r,t) \verifiedeq \sum_{k=0}^n \gamma_k \, H_k(t)\,\exp(-k(k+a+b+c+d-1)r) 
+\end{align}
+and defined as a solution to the DDE (\ref{WilDDE}), where $p(t) \defeq \prod_{k=1}^n(t-z_k)$ and the initial condition $M_p(0,t) \defeq p(t)$. Note that $p(t)$ is a monic polynomial of degree $n$ with simple zeros for $t$ in a neighbourhood of $t_0$ where the polynomial $r \mapsto M_p(t,r)$ has simple zeros. Remark: formally we can let $n\to\infty$ and make it approach $M(r,t)$ infinity close.
 \end{lemma}
-where $j \in \mathbb{Z}\backslash\{0\}, j \ne k$. The prime indicates $j$ and $-j$ terms should be multiplied together (the remaining $k=-j$ term is multiplied separately).
 \begin{proof}
 We start from the observation that:
 \begin{align}
@@ -382,20 +382,12 @@ Since we assumed $z_k(r)$ to be simple, its derivative with respect to $t$ can't
 \begin{align} \label{WilDDE1}
 \frac{\mathrm{d} }{\mathrm{d} r}z_k(r) &\verifiedeq \dfrac{B(z_k(r))\,M(r,z_k(r)+i) + D(z_k(r))\,M(r,z_k(r)-i)}{ \frac{\partial}{\partial t}M(r,z_k(r))}
 \end{align}
-For the next step we follow the same approach as Romik [ref]. We consider the finite entire function:
+For the next step we follow the same approach as Romik in section 3.5 of \cite{rom}. We have the factorisation and its derivative of $M_p(r,t)$: 
 \begin{align}
-M_p(r,t) \verifiedeq \sum_{k=0}^n \gamma_n \, H(t)\,\exp(-r(n+a+b+c+d-1))^{n} 
+M_p(r,t) &\verifiedeq \exp(-n(n+a+b+c+d-1)r)\,\prod_{j=1}^n\bigg(t-z_j(r)\bigg)\\
+\frac{\partial}{\partial t} M_p(r,z_k(r)) &\verifiedeq \exp\left(-n(n+a+b+c+d-1)r\right)\,\prod^n_{\substack{j=1\\j\ne k}}\bigg(z_k(r)-z_j(r)\bigg)
 \end{align}
-defined as a solution to the DDE (\ref{WilDDE1}), where $p(t) \defeq \prod_{k=1}^n(t-z_k)$ and the initial condition $M_p(0,t) \defeq p(t)$. 
-We have the factorisation and its derivative: 
-\begin{align}
-M_p(r,t) &\verifiedeq \exp(-r)^{n\,(n+a+b+c+d-1)}\,\prod_{j=1}^n\bigg(t-z_j(r)\bigg)\\
-\frac{\partial}{\partial t} M_p(r,z_k(r)) &\verifiedeq \exp\left(-r(n+a+b+c+d-1)\right)^{n}\,\prod^n_{\substack{j=1\\j\ne k}}\bigg(z_k(r)-z_j(r)\bigg)
-\end{align}
-Taking $n \rightarrow \infty$ and plugging this into (\ref{WilDDE1}) gives the result:
-\begin{align} \label{WilDDE2}
- \frac{\mathrm{d}}{\mathrm{d} r}z_k(r) \verifiedeq i\,B(z_k(r))\, \prod^{'}_{j \ne k} \frac{z_k(r)+i-z_j(r)}{z_k(r)-z_j(r)} -i\,D(z_k(r))\,\prod^{'}_{j \ne k} \frac{z_k(r)-i-z_j(r)}{z_k(r)-z_j(r)}
-\end{align}
+plugging these into (\ref{WilDDE1}) gives the result.
 \end{proof}
 \section{The functions to be expanded: Riemann $\Xi(t)$ and $\Xi_i(t)$} \label{functobexpanded}
 Our main focus will be on expanding the Riemann $\Xi(t)$ function and to visualise its flows. Since our framework is generic, we decided to include a similar, yet much simpler function in our scope and to compare the results. We know that the non-trivial zeros $\rho_n$ of $\xi(s)$ determine the oscillation (error) term in the prime counting function(s). Analogously, the equidistant zeros $\mu_n\verifiedeq 0 \pm 2\pi n i$ induce the oscillating term (sawtooth shaped) in the integer counting function. The entire function associated with the Hadamard product of these $\mu$'s is $\xi_i(s) \defeq \frac{2}{s}\sinh\left(\frac{s}{2}\right)$. Analogously to $\Xi(t)$, we can define $\Xi_i(t) \defeq  \xi_i\left(it\right) \defeq \frac{t}{2}\sin\left(\frac{t}{2}\right)$. The main properties of both functions are summarised in table \ref{tab:tablefunc}.
@@ -483,7 +475,7 @@ We have implemented the following checks to ensure the computations were done co
 \begin{enumerate}
 \item \textit{Ensure the code produces replicable results.} We verified the correct working of our FLINT/ARB code by fully reproducing it in Maple\texttrademark  \cite{map} and comparing randomly chosen values. 
 \item  \textit{Verify the expansion meets the target accuracy of $20$ digits.} Check that the difference $F(60)-X^\phi_0(60)$ shows at least $20$ zeros.
-\item  \textit{Verify the expansion has been done correctly.} Check that $F(t) \verifiedeq \sum_{n=0}^\infty (\text{coefficient}_n)$ at $t=0$ (Hermite, Bessel and Laguerre), at $t=1$ (Jacobi), at $t=i$ (Pseudo Jacobi) and at $t\verifiedeq ai$ (Meixner-Pollaczek, Continuous Hahn, Continuous Dual Hahn and Wilson polynomials). 
+\item  \textit{Verify the expansion has been done correctly.} Check that $F(t) \verifiedeq \sum_{n=0}^\infty (\text{coefficient}_n)$ at $t=0$ (Hermite and Laguerre) and at $t\verifiedeq ai$ (Meixner-Pollaczek, Continuous Hahn, Continuous Dual Hahn and Wilson polynomials). 
 \item \textit{Verify that the derived expressions for $\frac{d}{d\,r}z_k(r)$ work correctly.}. Check that the Newton approximation of the first derivative at a known $k$-th zero of $F$ at $r=0$, equals the value of the derived equation for $\frac{d}{d\,r}z_k(0)$. For brevity let $z_n = z_n(0)$. 
 
 For the PDEs we evaluate the sum of zeros for $F=\Xi(t), z_n=\Im(\rho_n)$ and $F=\Xi_i(t), z_n=2\pi n$ respectively as:
@@ -499,7 +491,7 @@ For the DDEs we evaluate the product of zeros $F\verifiedeq \Xi(t), z_n=\Im(\rho
 \end{enumerate}
 
 \section{Overview of the results} \label{results}
-In appendix \ref{eqsused}, we list all relevant equations for each orthogonal polynomial family in scope. The visuals of the flows are also included there. For the Generalised Laguerre, Bessel, Jacobi and Pseudo-Jacobi families, we found that computing the $\frac{\partial^{d}}{\partial t^{d}} X^{\mathcal{\phi}}_r(t)$, where $d$ is the $d$-th partial $t$-derivative of the flow, could be done almost for "free". For these families we have included (but not coded) these extended equations.  
+In appendix \ref{eqsused}, we list all relevant equations for each orthogonal polynomial family in scope. The visuals of the flows are also included there. For the Generalised Laguerre family, we found that computing the $\frac{\partial^{d}}{\partial t^{d}} X^{\mathcal{\phi}}_r(t)$, where $d$ is the $d$-th partial $t$-derivative of the flow, could be done almost for "free". For this family we have included (but not coded) the extended equation.  
 
 Formally, the flows should only be valid for $r > 0$, however computations showed that these could be extended into the negative domain yielding further insights. For $F=\Xi(t)$ we see two types of flows in the domain $r > 0$:
 \begin{itemize}
@@ -521,10 +513,7 @@ In the table \ref{tab:tablefindings} we summarize the flow type we see for each 
       Pólya-De Bruijn & $\Xi_{\lambda}(t)$ & A\\
       Hermite & $X^\mathcal{H}_r(t)$  & A & Odd index $= 0$, all positive real, monotone decreasing\\
       Laguerre & $X^\mathcal{L}_r(t)$  & A & Alternating with decreasing frequency, no pattern observed\\
-      Bessel-y & $X^\mathcal{B}_r(t)$  & B & Alternating + + - -, monotone decreasing\\
       Meixner Poll. & $X^\mathcal{MP}_r(t)$  & B & Odd index $= 0$, all positive real, monotone decreasing\\
-      Pseudo-Jacobi & $X^\mathcal{PJ}_r(t)$  & B & All complex, real part positive, imaginary part alternating + -\\      
-      Jacobi & $X^\mathcal{J}_r(t)$  & B & Odd index $= 0$ when $\alpha = \beta$, alternating + -, monotone decreasing\\
       Cont. Dual Hahn & $X^\mathcal{CDH}_r(t)$  & B & All positive real, monotone decreasing\\
       Cont. Hahn & $X^\mathcal{CH}_r(t)$  & B & Odd index $= 0$, all positive real, monotone decreasing\\
       Wilson & $X^\mathcal{W}_r(t)$  & B & All positive real, monotone decreasing\\
@@ -546,7 +535,6 @@ We have demonstrated that visualising the Poisson flows is computationally tract
 \textit{One rather striking fact is that the four different series expansions} (i.e. Pólya-De Bruijn, Hermite, Meixner Pollaczek, Continuous Hahn) \textit{we have considered for the Riemann $\Xi$ function, exhibit remarkably similar structural similarities: namely, in all four expansions the coefficients appear with alternating signs (and their asymptotics can be understood to a good level of accuracy, as our analysis shows). It is intriguing to wonder about the significance of this structural property of $\Xi(t)$. Can this information be exploited somehow to derive information about the location of the zeros of $\Xi(t)$? By way of comparison, one can consider “toy” expansions of the above forms involving more elementary coefficient sequences.}
 \end{quotation}
 
-\pagebreak
 He then shows the (trivial) reality of the zeros for all families, except for the Continuous Hahn polynomials. This raises the question whether anything could be said about the reality of the zeros of the $g_n$ polynomial expansion (i.e. the Continuous Hahn polynomials with parameters $\frac34, \frac34, \frac34, \frac34$). We found that after a slight change of parameters, it becomes quite easy to show that all zeros of the alternating generating function of the Continuous Hahn polynomial are real and regularly spaced for all $0 < r < 1$. We start from equation 9.4.11 in \cite{koe} and have:
 \begin{align}
 \sum_{n=0}^\infty (-1)^n\, \frac{(2)_{2n}}{\left(\frac32\right)_{2n}}\frac{ r^{2n}}{(2n)!}p_{2n}^{\left(\frac12,1,\frac12,1\right)}(t) &\verifiedeq \frac12\,\left(\frac{{}_2F_1\left(\left[1,\frac12-it\right],\left[1\right], -\frac{4r}{(1-r)^2}\right)}{(1-r)^2}+\frac{{}_2F_1\left(\left[1,\frac12-it\right],\left[1\right], \frac{4r}{(1+r)^2}\right)}{(1+r)^2} \right) \\
@@ -559,13 +547,6 @@ Similarly we have for the Generalised Laguerre Polynomials the 'toy' generating 
 \sum_{n=0}^\infty (-1)^n\,r^{2n} \,L_{2n}^{\left(a\right)}(t) \verifiedeq \frac12\,\left(\frac{1}{(1-ix)^{a+1}}\,\displaystyle \exp\left(\frac{-itx}{1-ix}\right)+\frac{1}{(1+ix)^{a+1}}\, \exp\left(\frac{itx}{1+ix}\right)\right)
 \end{align}
 which again only has real zeros that are well controlled (see table \ref{tab:tablezeros}).
-
-We observed that also the Jacobi polynomials possess the property that the coefficients at odd indices are zero (but only when $\alpha\verifiedeq \beta$). Using equation 9.8.13 in \cite{koe} yields its toy expression for $\alpha \verifiedeq \beta\verifiedeq \frac12$:
-\begin{align}
-\sum_{n=0}^\infty (-1)^n \frac{(2)_{2n}}{\left(\frac32\right)_{2n}}r^{2n}\,P_{2n}^{\left(\frac12,\frac12\right)}(t) &\verifiedeq \frac12\,\left(\frac{{}_2F_1\left(\left[1,\frac32\right],\left[\frac32\right],\frac{ir\,2(t-1)}{(1-ir)^2}\right)}{(1-ir)^2}+\frac{{}_2F_1\left(\left[1,\frac32\right],\left[\frac32\right], \frac{-ir\,2(t-1)}{(1+ir)^2}\right)}{(1+ir)^2}\, \right) \\
-  & \verifiedeq \frac{\left(1-r^2\right)}{1+r^4+r^2\left(4\,t^2-2\right)} \notag
-\end{align}
-where the last equation has no zeros.
 
 This results in the list of "toy" expansions and the closed forms for their $n-$th zero (all real and simple):
 \begin{table}[H]
@@ -580,12 +561,10 @@ This results in the list of "toy" expansions and the closed forms for their $n-$
       General. Laguerre & $\displaystyle \sum_{n=0}^\infty (-1)^n\,r^{2n} \,L_{2n}^{\left(\alpha\right)}(t)$ & $\displaystyle z_n(r,\alpha) \verifiedeq i\,\frac{r^2+1}{2r}\,\left(\alpha\log\left(\frac{1-ir}{1+ir}\right)+\log\left(\frac{r+i}{r-i}\right)-2\pi i n\right)$ \\ 
       Meixner Pollaczek & $\displaystyle \sum_{n=0}^\infty (-1)^n\, r^{2n}\, P_{2n}^{\left(\lambda\right)}\left(t; \frac{\pi}{2}\right)$ &  $\displaystyle z_n(r) \verifiedeq \dfrac{\pi  \left(n-\frac12\right)}{\mathrm{log}\! \left(\dfrac{1+r}{1-r}\right)}$ \\
       Continuous Hahn & $\displaystyle \sum_{n=0}^\infty (-1)^n\, \frac{2n+1}{\left(\frac32\right)_{2n}}\,r^{2n}\,p_{2n}\left(t;\frac12,1,\frac12,1\right)$  & $\displaystyle z_n(r) \verifiedeq \dfrac{\pi  \left(n-\frac12\right)}{\mathrm{log}\! \left(\dfrac{r +1}{r-1}\right)-\mathrm{log}\! \left(\dfrac{r-1}{r+1}\right)}$\\
-     Jacobi & $\displaystyle \sum_{n=0}^\infty (-1)^n\, \frac{(2)_{2n}}{\left(\frac32\right)_{2n}}\,r^{2n}\,P_{2n}^{\left(\frac12,\frac12\right)}(t)$  & no zeros at all\\
     \end{tabular}
   \end{center}
 \end{table}
 
-\pagebreak
 \end{itemize}
 \begin{thebibliography}{} 
 \bibitem{rom}
@@ -651,7 +630,7 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
   w_x &\defeq \mathrm{e}^{-x^2}\\
   f_n &\verifiedeq (-1)^n\,\frac{2\,\Gamma\left(\frac{n}{2}+\frac12\right)}{\pi\,\Gamma(\frac{n}{2}+1)} \\
   -n\,y(x) &\verifiedeq \frac12\,y''(x)-x\,y'(x) \\
-  X^\mathcal{H}_r(t)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}\,{}_1F_1\left(-n, \frac12,t^2\right)\,\exp(-r)^{2n} =\Xi_{\frac{\exp(-r)^2-1}{4}} (\exp(-r)\,t) \\ 
+  X^\mathcal{H}_r(t)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}\,{}_1F_1\left(-n, \frac12,t^2\right)\,\exp(-2nr) =\Xi_{\frac{\exp(-r)^2-1}{4}} (\exp(-r)\,t) \\ 
   \gamma_n &\verifiedeq f_n\,\int_{0}^{\infty} F(x)\,w_x\,{}_1F_1\left(-\frac{n}{2}, \frac12,x^2\right)\,\mathrm{d}x \\
   \sum_{n=0}^\infty \gamma_n &\verifiedeq F(0) \\
 \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq-\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} + z_k(r)\\
@@ -673,9 +652,9 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
   M_n(a) &\defeq \frac{\Gamma(\alpha+1+n)}{n!} \\
   w(x,a) &\defeq \mathrm{e}^{-x}\,x^a\\
   f_n(a) &\verifiedeq \frac{\Gamma\left(n+a+1\right)}{\Gamma(a+1)^2\,n!} \\
-  -n\,y(x) &\verifiedeq x\,y''(x)+(\alpha+1-x)\,y'(x) \\
-  X^{\mathcal{L}\,(d)}_r(t;a)\left[F(t)\right] &\verifiedeq \frac{a}{(a)_{d+1}}\,\sum_{n=0}^\infty \gamma_n(a)\,(-n)_d\,{}_1F_1\left(d-n, a+d+1,t\right)\,\exp(-r)^n \\ 
-  \gamma_n(a) &\verifiedeq f_n(a)\int_{0^+}^{\infty} F(x)\,w(x,a)\,{}_1F_1\left(-n, a+1,x\right)\,\mathrm{d}x \\
+  -n\,y(x) &\verifiedeq x\,y''(x)+(\alpha+1-x)\,y'(x) \label{lagPDE}\\
+  X^{\mathcal{L}\,(d)}_r(t;a)\left[F(t)\right] &\verifiedeq \frac{a}{(a)_{d+1}}\,\sum_{n=0}^\infty \gamma_n(a)\,(-n)_d\,{}_1F_1\left(d-n, a+d+1,t\right)\,\exp(-nr) \\ 
+  \gamma_n(a) &\verifiedeq f_n(a)\int_{0^+}^{\infty} F(x)\,w(x,a)\,{}_1F_1\left(-n, a+1,x\right)\,\mathrm{d}x \label{lagflow}\\
   \sum_{n=0}^\infty \gamma_n(a) &\verifiedeq \Xi(0) \\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq-2\,z_k(r)\,\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} -(\alpha+1-z_k(r))\\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(0)&\verifiedeq 2-(\alpha+1-2\,k\,\pi) \quad \text{when } F=\Xi_i
@@ -689,34 +668,13 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
 \pagebreak
 \noindent\fbox{\begin{minipage}{\textwidth}
 \begin{align}
-  \textbf{Poisson}&\textbf{ Flow for the Bessel $y_n$ polynomials} \notag \\
-  y_n(x;a) &\defeq {}_2F_0\left(-n, n+a+1,[],-\frac{x}{2}\right) \\
-  M_n(a) &\defeq -\frac{2^{a+1}\,\Gamma(-n-a)\,n!}{2n+a+1}\\
-  w_x(a) &\defeq \mathrm{e}^{-\frac{2}{x}}\,x^a \\
-  f_n(a) &\verifiedeq -\frac{\left(2n+a+1\right)}{2^{a+1}\,\Gamma(-n-a)\,n!} \\
-  -n\,(n+a+1)\,y(x) &\verifiedeq -x^2\,y''(x)-\big((a+2)\,x+2\big)\,y'(x) \\ \label{besPDE}
-  X^{\mathcal{B}\,(d)}_r(t;a)\left[F(t)\right] &\verifiedeq \frac{(-1)^d}{2^d}\sum_{n=0}^\infty \gamma_n(a)\frac{(n+a)_{d+1}(-n)_d}{n+a}{}_2F_0\left([d-n, n+a+d+1],[],-\frac{t}{2}\right)\exp\left(-r(n+a+1)\right)^n \\ \label{besflow}
-  \gamma_n(a) &\verifiedeq f_n(a)\,\int_{0^+}^{\infty} F(x)\,w_x(a)\,{}_2F_0\left([-n, n+a+1],[],\frac{-x}{2}\right)\,\mathrm{d}x \\
-  \sum_{n=0}^\infty \gamma_n(a) &\verifiedeq \Xi(0) \\
-  \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq 2\,z_k(r)^2\,\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} + \big((a+2)\,z_k(r)+2\big)\\
-  \frac{\mathrm{d}}{\mathrm{d} r} z_k(0)&\verifiedeq -2\,(2\,k\,\pi)+ \big((a+2)\,(2\,k\,\pi)+2\big) \quad \text{when } F=\Xi_i
-\end{align}
-\end{minipage}}
-\begin{figure}[H]
-  \includegraphics[width=1\linewidth]{BesselFlowdouble.jpeg}
-  \caption{The graphs show the Poisson flows of the Bessel-$y$ polynomial expansions for $\Xi(t)$ (left) and $\Xi_i(t)$ (right) for a fixed set of parameters. The collisions show a similar pattern as in the Pólya-De Bruijn flow, but now flipped vertically and pushed to the right. When $r$ increases the flows line up horizontally into an arithmetic progression.}
-  \label{fig:flowB}
-\end{figure}
-\pagebreak
-\noindent\fbox{\begin{minipage}{\textwidth}
-\begin{align}
   \textbf{Poisson}&\textbf{ Flow for the Meixner Pollaczek polynomials with $\Phi = \frac{\pi}{2}$} \notag \\
   P_n^{(\lambda)}\left(x; \frac{\pi}{2}\right) &\defeq i^n\,\frac{(2\lambda)_n}{n!}\,{}_2F_1\left([-n, \lambda+i\,x],[2\lambda],2\right)\\
   M_n(\lambda) &\defeq \frac{2\,\pi\,\Gamma(n+2\lambda)}{2^{2\lambda}\,n!} \\
   w_x(\lambda) &\defeq \Gamma(\lambda+ix)\,\Gamma(\lambda-ix) \\
   f_n(\lambda) &\verifiedeq \frac{4^\lambda\,\Gamma(n+2\lambda)}{2\,\pi\,\Gamma(2\lambda)^2\,\Gamma(n+1)} \\
   -n\,y(x) &\verifiedeq -\frac12\,(\lambda-ix)\,y(x+i)+\lambda\,y(x)-\frac12\,(\lambda+ix)\,y(x-i) \\
-  X^\mathcal{MP}_r(t;\lambda)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}(\lambda)\,{}_2F_1\left([-2n, \lambda+it],[2\lambda],2\right)\,\exp\left(-r\right)^{2n} \\ 
+  X^\mathcal{MP}_r(t;\lambda)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}(\lambda)\,{}_2F_1\left([-2n, \lambda+it],[2\lambda],2\right)\,\exp\left(-2nr\right) \\ 
   \gamma_n(\lambda) &\verifiedeq f_n(\lambda)\,\int_{-\infty}^{\infty} F(x)\,w_x(\lambda)\,{}_2F_1\left([-n, \lambda+ix],[2\lambda],2\right)\,\mathrm{d}x \\
   \sum_{n=0}^\infty \gamma_n(\lambda) &\verifiedeq \Xi(i\lambda) \\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq  \left(\frac{\lambda-i\,z_k(r)}{2}\right)\,\prod_{j \ne k}^{'} \left(1+\frac{i}{z_k(r)-z_j(r)}\right)+\left(\frac{\lambda+i\,z_k(r)}{2}\right)\,\prod_{j \ne k}^{'} \left(1-\frac{i}{z_k(r)-z_j(r)}\right) \\
@@ -731,48 +689,6 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
 \pagebreak
 \noindent\fbox{\begin{minipage}{\textwidth}
 \begin{align}
-  \textbf{Poisson}&\textbf{ Flow for the Jacobi polynomials} \notag \\
-  P_n(x;\alpha,\beta) &\defeq \frac{(\alpha+1)_n}{n!}\,{}_2F_1\left([-n, n+\alpha+\beta+1],[\alpha+1],\frac{1-x}{2}\right) \\
-  M_n(\alpha,\beta) &\defeq \frac{2^{\alpha+\beta+1}}{2n+\alpha+\beta+1}\,\frac{\Gamma(n+\alpha+1)\,\Gamma(n+\beta+1)}{\Gamma(n+\alpha+\beta+1)\,n!}\\
-  w_x(\alpha,\beta) &\defeq (1-x)^\alpha\,(1+x)^\beta \\
-  f_n(\alpha,\beta) &\verifiedeq \frac{\Gamma(n+\alpha+1)\,\Gamma(n+\alpha+\beta+1)\,(2n+\alpha+\beta+1)}{2^{\alpha+\beta+1}\,\Gamma(\alpha+1)^2\,\Gamma(n+1)\,\Gamma(n+\beta+1)} \\
- -n\,(n+\alpha+\beta+1)\,y(x) &\verifiedeq (1-x^2)\,y''(x)+\big(\beta-\alpha-(\alpha+\beta+2)\,x\big)\,y'(x) \\
-  X^{\mathcal{J}\,(d)}_r(t;\alpha,\beta)\left[F(t)\right] &\verifiedeq \frac{(-1)^d\,\alpha}{2^d\,(\alpha)_{d+1}}\,\sum_{n=0}^\infty \gamma_n(\alpha,\beta)\,\frac{(-n)_d\,(n+\alpha+\beta)_{d+1}}{n+\alpha+\beta}\\ &\times {}_2F_1\left([d-n, n+\alpha+\beta+d+1],[\alpha+d+1],\frac{1-t}{2}\right)\,\exp\left(-r(n+\alpha+\beta+1)\right)^n \\ 
-  \gamma_n(\alpha,\beta) &\verifiedeq f_n(\alpha,\beta)\,\int_{-1^+}^{1^-} \Xi(x)\,w_x(\alpha,\beta)\,{}_2F_1\left([-n, n+\alpha+\beta+1],[\alpha+1],\frac{1-x}{2}\right)\,\mathrm{d}x \\
-  \sum_{n=0}^\infty \gamma_n(\alpha,\beta) &\verifiedeq \Xi(1) \\
-  \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq -2\,(1-z_k(r)^2)\,\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} - \big(\beta-\alpha-(\alpha+\beta+2)\,z_k(r)\big)\\
-  \frac{\mathrm{d}}{\mathrm{d} r} z_k(0)&\verifiedeq 2\,\frac{(1-(2\,k\,\pi)^2)}{2\,k\,\pi}-\big(\beta-\alpha-(\alpha+\beta+2)\,(2\,k\,\pi)\big) \quad \text{when } F=\Xi_i
-\end{align}
-\end{minipage}}
-\begin{figure}[H]
-  \includegraphics[width=1\linewidth]{JacobiFlowdouble.jpeg}
-  \caption{The graphs show the Poisson flows of the Jacobi polynomial expansions for $\Xi(t)$ (left) and $\Xi_i(t)$ (right) for a fixed set of parameters. The collisions seem to appear only at $r < 0$ and show a similar pattern as in the Pólya-De Bruijn flow, but now flipped vertically. We made several runs with different sets of parameters, including those for the Gegenbauer/Ultraspherical ($\alpha=\beta=\lambda-\frac12$), Chebyshev ($\alpha=\beta=-\frac12$) and Legendre/Spherical ($\alpha=\beta=0$) polynomials, all with a very similar outcome. When $r$ increases the flows line up horizontally into an arithmetic progression.}
-  \label{fig:flowJ}
-\end{figure}
-\pagebreak
-\noindent\fbox{\begin{minipage}{\textwidth}
-\begin{align}
-  \textbf{Poisson}&\textbf{ Flow for the Pseudo Jacobi or Romanovski polynomials} \notag \\
-  P_n(x;v,N) &\defeq \frac{(-2i)^n\,(-N+iv)_n}{(n-2N-1)_n}\,{}_2F_1\left([-n, n-2N-1],[-N+iv],\frac{1-ix}{2}\right)\\
-  M_n(v,N) &\defeq \frac{2\pi\,\Gamma(2N+1-2n)\,\Gamma(2N+2-2n)\,2^{2n-2N-1}\,n!}{\Gamma(2N+2-n)\,|\Gamma(N+1-n+iv)|^2} \\
-  w_x(v,N) &\defeq \left(1+x^2\right)^{-N-1}\,\mathrm{e}^{2a\,\arctan(x)}\\
-  f_n(v,N) &\verifiedeq(-1)^n \frac{4^N\,(2N+1-2n)\,\Gamma(n-N+iv)^2\,|\Gamma(N+1-n+iv)|^2}{\pi\,n!\,\Gamma(2N+2-n)\,\Gamma(-N+iv)^2} \\
-  -n\,(n-2N-1)\,y(x) &\verifiedeq -(1+x^2)\,y''(x)-2\,\big(v-Nx\big)\,y'(x) \\
-  X^{\mathcal{PJ}\,(d)}_r(t;v,N)\left[F(t)\right] &\verifiedeq \frac{(-i)^d}{2^d\,(-N+iv)_d}\,\sum_{n=0}^\infty \gamma_n(v,N)\,(-n)_d\,(n-2N-1)_d\\ &\times{}_2F_1\left([d-n, n-2N-1+d],[d-N+iv],\frac{1-it}{2}\right)\,\exp\left(-r(n-2N-1)\right)^n \\ 
-  \gamma_n(v,N) &\verifiedeq f_n(v,N)\,\int_{-\infty}^{\infty} \Xi(x)\,w_x(v,N)\,{}_2F_1\left([-n, n-2N-1],[-N+iv],\frac{1-ix}{2}\right)\,\mathrm{d}x \\
-  \sum_{n=0}^\infty \Re(\gamma_n(v,N)) &\verifiedeq F(i), \,\,\sum_{n=0}^\infty \Im(\gamma_n(v,N)) = 0 \\
-  \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq 2\,(1+z_k(r)^2)\,\sum_{j \ne k}^{'} \frac{1}{z_k(r)-z_j(r)} + 2\,\big(v-N\,z_k(r)\big)\\
-  \frac{\mathrm{d}}{\mathrm{d} r} z_k(0)&\verifiedeq -2\,\frac{(1+(2\,k\,\pi)^2)}{2\,k\,\pi}+ 2\,\big(v-N\,(2\,k\,\pi)\big) \quad \text{when } F=\Xi_i
-\end{align}
-\end{minipage}}
-\begin{figure}[H]
-  \includegraphics[width=1\linewidth]{PseudoJacobiFlowdouble.jpeg}
-  \caption{The graphs show the Poisson flows of the Pseudo Jacobi polynomial expansions for $\Xi(t)$ (left) and $\Xi_i(t)$ (right) for a fixed set of parameters. The collisions seem to appear only at $r < 0$ and show a similar pattern as in the Pólya-De Bruijn flow, but now flipped vertically and pushed to the right. This graph looks very similar to the Bessel-$y$ expansion. When $r$ increases the flows line up horizontally into an arithmetic progression.}
-  \label{fig:flowPJ}
-\end{figure}
-\pagebreak
-\noindent\fbox{\begin{minipage}{\textwidth}
-\begin{align}
   \textbf{Poisson}&\textbf{ Flow for the Continuous Dual Hahn polynomials} \notag \\
   S_n(x^2;a,b,c) &\defeq (a+b)_n(a+c)_n\, {}_3F_2([-n,a+ix, a- ix], [a+b, a+c], 1) \\
   M_n(a,b,c) &\defeq 2\pi\,n!\,\Gamma(n+a+b)\,\Gamma(n+a+c)\,\Gamma(n+b+c) \\
@@ -781,7 +697,7 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
   -n\,y(x) &\verifiedeq -B(x)\,y(x+i)+\left(B(x)+D(x)\right)\,y(x)-D(x)\,y(x-i) \\
   B(x)&\verifiedeq\frac{(a-ix)\,(b-ix)\,(c-ix)}{2ix\,(2ix-1)} \\
   D(x)&\verifiedeq\frac{(a+ix)\,(b+ix)\,(c+ix)}{(2ix\,(2ix+1)} \\
-  X^\mathcal{CDH}_r(t;a,b,c)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c)\,{}_3F_2\left([-n, a+it, a-it],[a+b,a+c],1\right)\,\exp\left(-r\right)^n \\ 
+  X^\mathcal{CDH}_r(t;a,b,c)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c)\,{}_3F_2\left([-n, a+it, a-it],[a+b,a+c],1\right)\,\exp\left(-nr\right) \\ 
   \gamma_n(a,b,c) &\verifiedeq f_n(a,b,c)\,\int_{0}^{\infty} F(x)\,w_x(a,b,c)\,{}_3F_2\left([-n, a+ix, a-ix],[a+b,a+c],1\right)\,\mathrm{d}x \\
   \sum_{n=0}^\infty \gamma_n(a,b,c) &\verifiedeq \Xi(\pm ia) \\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq B\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1+\frac{i}{z_k(r)-z_j(r)}\right)+D\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1-\frac{i}{z_k(r)-z_j(r)}\right) \\
@@ -805,7 +721,7 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
  -n\,\kappa_n\,y(x) &\verifiedeq -B(x)\,y(x+i)+\left(B(x)+D(x)\right)\,y(x)-D(x)\,y(x-i) \\
   B(x)&\verifiedeq (c-ix)\,(d-ix) \\
   D(x)&\verifiedeq (a+ix)\,(b+ix) \\
-  X^\mathcal{CH}_r(t;a,b,c,d)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,{}_3F_2\left([-n, \kappa_n, a+it],[a+c,a+d],1\right)\,\exp\left(-r\,\kappa_n\right)^n \\ 
+  X^\mathcal{CH}_r(t;a,b,c,d)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,{}_3F_2\left([-n, \kappa_n, a+it],[a+c,a+d],1\right)\,\exp\left(-n\,\kappa_n\,r\right) \\ 
   \gamma(n,a,b,c,d) &\verifiedeq f_n(a,b,c,d)\,\int_{0}^{\infty} F(x)\,w_x(a,b,c,d) {}_3F_2\left([-n, \kappa_n, a+ix],[a+c,a+d],1\right)\,\mathrm{d}x \\
   \sum_{n=0}^\infty \gamma_n(a,b,c,d) &= \Xi(ia) \\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq B\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1+\frac{i}{z_k(r)-z_j(r)}\right)+D\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1-\frac{i}{z_k(r)-z_j(r)}\right) \\
@@ -829,7 +745,7 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
   -n\,\kappa_n\,y(x) &\verifiedeq -B(x)\,y(x+i)+\left(B(x)+D(x)\right)\,y(x)-D(x)\,y(x-i) \\ \label{wildde}
   B(x)&\verifiedeq \frac{(a-ix)\,(b-ix)\,(c-ix)\,(d-ix)}{2ix\,(2ix-1)} \\
   D(x)&\verifiedeq \frac{(a+ix)\,(b+ix)\,(c+ix)\,(d+ix)}{(2ix\,(2ix+1)} \\
-  X^\mathcal{W}_r(t;a,b,c,d)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,{}_4F_3\left(\left[-n, \kappa_n,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)\,\exp\left(-r\,\kappa_n\right)^n \\ \label{wilflow}
+  X^\mathcal{W}_r(t;a,b,c,d)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,{}_4F_3\left(\left[-n, \kappa_n,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)\,\exp\left(-n\,\kappa_n\,r\right) \\ \label{wilflow}
   \gamma_n(a,b,c,d) &\verifiedeq f_n(a,b,c,d)\int_{0}^{\infty} F(x)\,w_x(){}_4F_3\left(\left[-n, \kappa_n,a+ix, a- ix\right], \left[a+b, a+c, a+d\right], 1\right)\,\mathrm{d}x \\
   \sum_{n=0}^\infty \gamma_n(a,b,c,d) &\verifiedeq \Xi(\pm ia) \\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq B\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1+\frac{i}{z_k(r)-z_j(r)}\right)+D\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1-\frac{i}{z_k(r)-z_j(r)}\right) \\
@@ -850,7 +766,7 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
 
 There is a limited set of orthogonal polynomial families whose generating functions can be directly associated with the kernel of the Fourier cosine transform of $\Xi(t)$ or the sine transform of $\Xi{\prime}(t)$ (see Table \ref{tab:tablefunc}). Such a connection arises from the closed form of the generating functions, which can be expressed using specific parameters and extended to a broader domain through an appropriate mapping.
 
-Once this link is established, known relationships between different polynomial families can be utilized to progress within the Askey scheme. In some cases, this transition is achieved through a straightforward equation involving a single parameter. However, when an additional parameter is required, a finite sum formula becomes necessary. The table below presents a streamlined version of our results for the expansions of $\Xi(t)$, displaying only the integral components of the simplified coefficients for easier comparison. Full expressions, including those for $\Xi{\prime}(t)$, along with detailed derivations, are provided in subsequent sections. Notably, we have been unable to identify analogous expressions for the Bessel, Jacobi, or pseudo-Jacobi families.
+Once this link is established, known relationships between different polynomial families can be utilized to progress within the Askey scheme. In some cases, this transition is achieved through a straightforward equation involving a single parameter. However, when an additional parameter is required, a finite sum formula becomes necessary. The table below presents a streamlined version of our results for the expansions of $\Xi(t)$, displaying only the integral components of the simplified coefficients for easier comparison. Full expressions, including those for $\Xi{\prime}(t)$, along with detailed derivations, are provided in subsequent sections. 
 
 These simplified expressions are particularly valuable for expediting computations and providing a more accessible foundation for analyzing the asymptotic behavior of the expansion coefficients.
 
