@@ -373,14 +373,14 @@ and defined as a solution to the DDE (\ref{WilDDE}), where $p(t) \defeq \prod_{k
 \begin{proof}
 We start from the observation that:
 \begin{align}
-M(r,z_k(r)) &\verifiedeq 0 \\
-\frac{\mathrm{d}}{\mathrm{d} r} \big(M(r,z_k(r))\big) &\verifiedeq 0 \\
-\frac{\partial M}{\partial r}(r,Z_k(r))+ \frac{\partial M}{\partial t}(r,z_k(r))\,\frac{\mathrm{d} z_k(r)}{\mathrm{d} r} &\verifiedeq 0 \\
-B(z_k(r))\,M(r,z_k(r)+i) + D(z_k(r))\,M(r,z_k(r)-i)  &\verifiedeq \frac{\partial}{\partial t}M(r,z_k(r))\,\frac{\mathrm{d}}{\mathrm{d} r}z_k(r)
+M_p(r,z_k(r)) &\verifiedeq 0 \\
+\frac{\mathrm{d}}{\mathrm{d} r} \big(M_p(r,z_k(r))\big) &\verifiedeq 0 \\
+\frac{\partial M_p}{\partial r}(r,Z_k(r))+ \frac{\partial M_p}{\partial t}(r,z_k(r))\,\frac{\mathrm{d} z_k(r)}{\mathrm{d} r} &\verifiedeq 0 \\
+B(z_k(r))\,M_p(r,z_k(r)+i) + D(z_k(r))\,M_p(r,z_k(r)-i)  &\verifiedeq \frac{\partial}{\partial t}M_p(r,z_k(r))\,\frac{\mathrm{d}}{\mathrm{d} r}z_k(r)
 \end{align}
 Since we assumed $z_k(r)$ to be simple, its derivative with respect to $t$ can't be zero, hence we can rewrite this as follows into the DDE:
 \begin{align} \label{WilDDE1}
-\frac{\mathrm{d} }{\mathrm{d} r}z_k(r) &\verifiedeq \dfrac{B(z_k(r))\,M(r,z_k(r)+i) + D(z_k(r))\,M(r,z_k(r)-i)}{ \frac{\partial}{\partial t}M(r,z_k(r))}
+\frac{\mathrm{d} }{\mathrm{d} r}z_k(r) &\verifiedeq \dfrac{B(z_k(r))\,M_p(r,z_k(r)+i) + D(z_k(r))\,M_p(r,z_k(r)-i)}{ \frac{\partial}{\partial t}M_p(r,z_k(r))}
 \end{align}
 For the next step we follow the same approach as Romik in section 3.5 of \cite{rom}. We have the factorisation and its derivative of $M_p(r,t)$: 
 \begin{align}
