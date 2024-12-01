@@ -528,7 +528,7 @@ We have demonstrated that visualising the Poisson flows is computationally tract
  
 \begin{itemize}
   \item We start with a realistic observation. The common characteristic of all Poisson flows is that they start off with a distortion/approximation of the original functions $\Xi(t), \Xi_i(t)$ at $r=0$ where the complexity already seems highest. We observe that over time, information seems to flow from $r=0$ towards later or earlier phases. In these less complex 'distorted' domains ($r \ne 0$) we see trajectories either collide or converge towards an arithmetic progression. Unfortunately, we do not (yet) see any information gained from this 'distorted' domain that could tell us more about the distribution of the zeros at $r=0$. 
-\item However, on a more positive note, we find it really encouraging to see that the visualised flows for each expansion can be categorised into two distinct types and this raises new questions. What is the mechanism that induces these two types of flows? What makes for instance the one-parameter Generalised Laguerre and Bessel-$y$ families so different? Their PDEs tell us whether the flows are skewed to the left or to the right, however they don't explain whether collisions should occur in domain $r < 0$ or $r > 0$. 
+\item However, on a more positive note, we find it really encouraging to see that the visualised flows for each expansion can be categorised into two distinct types and this raises new questions. It seems that all type A flows are driven by PDEs (and sums of zeros) and all type B flows by DDEs (and products of zeros). Since transformations based on infinite relations between both types of families exist, we wonder at which point collisions will flip from the domain $r < 0$ to $r > 0$. 
 \item Romik demonstrates in section 3.5 of \cite{rom}, that the Differential Difference Equation (DDE) that underpins the dynamical evolution of the real zeros of the Meixner Pollaczek expansion no longer preserves the property of "hyperbolicity". However, the visualised Poisson flow suggests that a form of "hyperbolicity" is being preserved, but into the positive direction of "time" $r$. We observe the same for the other family's DDEs: in the domain $r > 0$ the flows tend to 'cool down' with time and trajectories of real zeros eventually organise themselves into an arithmetic progression. Could it be that "hyperbolicity" is maintained for $r > 0$ ? 
 \item In chapter 7 "Final remarks" of \cite{rom}, Romik makes the observation that:
 \begin{quotation}
@@ -579,7 +579,7 @@ Maplesoft, \emph{Mathematics-based software solutions}, https://www.maplesoft.co
 \bibitem{koe}
 Roelof Koekoek, Peter A. Lesky,René F. Swarttouw, \emph{Hypergeometric Orthogonal Polynomials and Their q-Analogues}, Springer, 2010, DOI 10.1007/978-3-642-05014-5
 \bibitem{koesup}
-Tom H. Koornwinder, \emph{Additions to the formula lists in “Hypergeometric orthogonal polynomials and their q-analogues” by Koekoek, Lesky and Swarttouw}, February 4th, 2022, https://staff.fnwi.uva.nl/t.h.koornwinder/art/informal/KLSadd.pdf
+Tom H. Koornwinder, \emph{Additions to the formula lists in “Hypergeometric orthogonal polynomials and their q-analogues” by Koekoek, Lesky and Swarttouw}, May 23, 2024, https://staff.fnwi.uva.nl/t.h.koornwinder/art/informal/KLSadd.pdf
 \bibitem{rot}
 B. Rodgers and T. Tao. \emph{The De Bruijn-Newman constant is non-negative.}, ArXiv e-prints, 2018. https://arxiv.org/abs/ 1801.05914
 \bibitem{dob}
@@ -591,7 +591,7 @@ Hari Mohan Srivastava, \emph{Some Families of Generating Functions Associated wi
 \bibitem{meipolgen}
 Wolter Groenevelt, Erik Koelink, Hjalmar Rosengren, \emph{Continuous Hahn functions as Clebsch-Gordan coefficients}, February 20, 2003, https://arxiv.org/abs/math/0302251v1
 \bibitem{connex}
-Michael A. Baeder, Howard S. Cohl, Hans Volkmer, \emph{Generalizations of generating functions for higher continuous hypergeometric orthogonal polynomials in the Askey scheme}, October 23, 2014, https://arxiv.org/pdf/1405.1918
+Michael A. Baeder, Howard S. Cohl, Hans Volkmer, \emph{Generalizations of generating functions for higher continuous hypergeometric orthogonal polynomials in the Askey scheme}, Journal of Mathematical Analysis and Applications, Elsevier, Volume 427, Issue 1, 1 July 2015, Pages 377-398
 \bibitem{git} 
 Dolph Dwars, Kalpesh Muchhal, \emph{GitHub environment with all code, data and graphs of this project}, https://github.com/km-git-acc/riemann-poly-expansions
 \end{thebibliography}{} 
