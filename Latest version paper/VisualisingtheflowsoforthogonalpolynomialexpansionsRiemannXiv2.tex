@@ -187,7 +187,7 @@
 \begin{document}
 
 \begin{abstract}
-In a comprehensive paper \cite{rom}, Dan Romik derives new infinite series expansions for the Riemann $\Xi(t)$ function in three specific families of orthogonal polynomials; the Hermite polynomials, the symmetric Meixner-Pollaczek polynomials and the continuous Hahn polynomials. He also launched the idea to use the Poisson kernel from the theory of orthogonal polynomials to distort the Riemann $\Xi-$function and thereby induce a 'flow' in its zeros that obeys some dynamical evolution law. Building on Romik's work, we initially aimed at visualising only his three flows, however ended up embarking on a broader journey that included the nine continuous polynomials families in the Askey scheme. For each of them we visualised their flows and derived their governing laws. We observe that the visualised flows can be categorised into two types. As a by-product, we derived simpler expressions for the expansion coefficients of the Laguerre, Meixner Pollaczek, Continuous Hahn, Continuous Dual Hahn and Wilson flows.  
+In a comprehensive paper \cite{rom}, Dan Romik derives new infinite series expansions for the Riemann $\Xi(t)$ function in three specific families of orthogonal polynomials; the Hermite polynomials, the symmetric Meixner-Pollaczek polynomials and the continuous Hahn polynomials. He also launched the idea to use the Poisson kernel from the theory of orthogonal polynomials to distort the Riemann $\Xi-$function and thereby induce a 'flow' in its zeros that obeys some dynamical evolution law. Building on Romik's work, we initially aimed at visualising only his three flows, however ended up embarking on a broader journey that included the six continuous polynomials families in the Askey scheme. For each of them we visualised their flows and derived their governing laws. We observe that the visualised flows can be categorised into two types. As a by-product, we derived simpler expressions for the expansion coefficients of the Laguerre, Meixner Pollaczek, Continuous Hahn, Continuous Dual Hahn and Wilson flows.  
 \end{abstract}
 
 \maketitle
@@ -218,7 +218,7 @@ We will focus our work on visualising the evolution of the real zeros only. Pair
 For our computations we require all relevant formulae  associated with a specific family of orthogonal polynomials (hypergeometric function, weight, orthogonality relation, leading coefficients, etc.) and for this we will follow the 2010 standard reference by Koekoek, Lesky and Swarttouw \cite{koe} that has been complemented by Koornwinder's 2022 paper containing new insights, additions and errata \cite{koesup}. The literature about orthogonal polynomials comes with its own historically evolved nomenclature that we will obviously strictly follow. However, some labels of the polynomials are not unique and for the unique labelling of the Poisson flows, we allowed ourselves a bit more freedom to ensure unambiguous and easy reference for the reader. We don't use any special mathematical symbols, but the Pochhammer symbol $(x)_n$ will appear quite often in the paper and reflects the rising factorial.
 
 \section{Structure of the paper}
-In the next chapters we will numerically and visually explore the Poisson flows of the real zeros of infinite series expansions for $\Xi(t)$ and $\Xi_i(t)$ into nine families of orthogonal polynomials. We start with an introduction of the Askey-scheme in chapter \ref{askeyscheme} followed by the derivations of the Poisson flow in chapter \ref{poissonflow} and the laws that govern the flows in chapter \ref{lawspoissonflow}. Chapter \ref{functobexpanded} introduces our target functions $\Xi$ and $\Xi_i$ and shows their Pólya-De Bruijn flows. After some computational and mathematical considerations in chapters \ref{mathcons} and \ref{compcons}, we will explain how the computational results were verified in chapter \ref{checks}. We will end the paper by presenting our results in chapter \ref{results} and some concluding remarks in chapter \ref{concremarks}. We have moved the many "by-products" of our investigations as well as their derivations to appendix \ref{specexpansions}. 
+In the next chapters we will numerically and visually explore the Poisson flows of the real zeros of infinite series expansions for $\Xi(t)$ and $\Xi_i(t)$ into six families of orthogonal polynomials. We start with an introduction of the Askey-scheme in chapter \ref{askeyscheme} followed by the derivations of the Poisson flow in chapter \ref{poissonflow} and the laws that govern the flows in chapter \ref{lawspoissonflow}. Chapter \ref{functobexpanded} introduces our target functions $\Xi$ and $\Xi_i$ and shows their Pólya-De Bruijn flows. After some computational and mathematical considerations in chapters \ref{mathcons} and \ref{compcons}, we will explain how the computational results were verified in chapter \ref{checks}. We will end the paper by presenting our results in chapter \ref{results} and some concluding remarks in chapter \ref{concremarks}. We have moved the many "by-products" of our investigations as well as their derivations to appendix \ref{specexpansions}. 
 
 \pagebreak
 \section{Askey scheme}\label{askeyscheme}
@@ -258,7 +258,7 @@ Swapping the summation and integration in the Poisson flow (assuming Fubini's th
  \gamma_n &\verifiedeq \frac{1}{M_n}\,\int_{-\infty}^\infty F(x)\,\phi_n(x)\,w(x) \,\mathrm{d}x
 \end{align}
 
-It is this generic structure that we decided to use for our computations, since it allows for the once-off calculation of the coefficients $\gamma_n$ for a certain set of chosen parameters for the orthogonal polynomial under study. All nine orthogonal polynomials in scope can now be expressed into a hypergeometric function and a leading factor $g_n$ that is only dependent on $n$ and the free parameters. This allows us to optimise the coefficient pre-computations a bit further:
+It is this generic structure that we decided to use for our computations, since it allows for the once-off calculation of the coefficients $\gamma_n$ for a certain set of chosen parameters for the orthogonal polynomial under study. All six orthogonal polynomials in scope can now be expressed into a hypergeometric function and a leading factor $g_n$ that is only dependent on $n$ and the free parameters. This allows us to optimise the coefficient pre-computations a bit further:
 \begin{align}
  X^\phi_z(t) &\verifiedeq \sum_{n=0}^\infty z^n\,\gamma_n\,g_n\,{}_pF_q(n,t,\text{parms})\\
  \gamma_n &\verifiedeq  \frac{1}{M_n}\,\int_{-\infty}^\infty F(x)\, g_n\,{}_pF_q(n,x, \text{parms})\,w(x) \,\mathrm{d}x
@@ -271,11 +271,11 @@ Collecting all terms that are independent of $r$ and $t$, we will pre-compute $\
 \pagebreak
 
 \section{The laws that govern the evolution of the zeros under the Poisson Flow} \label{lawspoissonflow}
-When varying parameter $z$ in the Poisson kernel (\ref{poiflow}) between $1$ and $0$, the (real and or complex) zeros of function $F$ at time $z=1$ will start to move. Subsequent changes in $z$ will therefore induce a 'trajectory' of zeros. Trajectories of real zeros can 'collide' (not cross) neighbouring trajectories and transform  into a conjugated pair of complex zeros. An interesting property is 'hyperbolicity, that forces trajectories of zeros, once real, to stay real 'forever'(this can occur moving forwards or backwards in "time" $z$). In this section we aim to derive the laws that govern the flow of zeros expressed into the first derivative of time of a zero at a certain point in time. 
+When varying parameter $z$ in the Poisson kernel (\ref{poiflow}) between $1$ and $0$, the (real and or complex) zeros of function $F$ at time $z=1$ will start to move. Subsequent changes in $z$ will therefore induce a 'trajectory' of zeros. Trajectories of real zeros can 'collide' (not cross) neighbouring trajectories and transform  into a conjugated pair of complex zeros. An interesting property is 'hyperbolicity', that forces trajectories of zeros, once real, to stay real 'forever' (this can occur moving forwards or backwards in "time" $z$). In this section we aim to derive the laws that govern the flow of zeros expressed into the first derivative of time of a zero at a certain point in time. 
 
 Each family of polynomials in the Askey scheme comes equipped with either a Partial Differential Equation (PDE) or a Differential Difference Equation (DDE). The PDEs can be used to derive the derivative of a specific zero in the flow by expressing it as an infinite \textit{sum} over all zeros to its left and its right ((see chapter 3 of Polymath15 \cite{pol}). The same can be done for the DDEs, but now using an infinite \textit{product} over those zeros (see chapter 3.5 of Romik \cite{rom}). 
 
-A critical first step for deriving the evolution law, is to apply the mapping $$z \rightarrow \exp\left(-r\,(\text{coeff-y})\right) \quad r \in \mathbb{R}. r > 0$$ where \textit{coeff-y} is the coefficient divided by $n$ of $y(x)$ in the DDE or PDE. For some polynomial families this is just $1$, however for others this can become as complex as $\exp\big(n\,(n+\text{parms})\big)$. This should be fine as long as the mapped factor continues to vary sufficiently smooth between $0$ and $1$. We have actually started using the linear variable $z$, however found that using the mapped variable $r$ clearly induces much more 'natural' flows (i.e. resembling the collision patterns of the Pólya-De Bruijn flows) for some of the more complex polynomial families. It therefore seems that this mapped distortion factor provides a more 'natural' way to describe the flow and it also directly paves the way for deriving the governing laws. A rigorous proof for this phenomenon would obviously be desired.    
+A critical first step for deriving the evolution law, is to apply the mapping $$z \rightarrow \exp\left(-r\,(\text{coeff-y})\right) \quad r \in \mathbb{R}, r > 0$$ where \textit{coeff-y} is the coefficient divided by $n$ of $y(x)$ in the DDE or PDE. For some polynomial families this is just $1$, however for others this can become as complex as $\exp\big(n\,(n+\text{parms})\big)$. This should be fine as long as the mapped factor continues to vary sufficiently smooth between $0$ and $1$. We have actually started using the linear variable $z$, however found that using the mapped variable $r$ clearly induces much more 'natural' flows (i.e. resembling the collision patterns of the Pólya-De Bruijn flows) for some of the more complex polynomial families. It therefore seems that this mapped distortion factor provides a more 'natural' way to describe the flow and it also directly paves the way for deriving the governing laws. A rigorous proof for this phenomenon would obviously be desired.    
 
 We will now demonstrate how this works for the Generalised Laguerre (PDE) and the Wilson (DDE) orthogonal polynomial families. The derivation of all the other families follows exactly the same lines and the results have been captured in appendix \ref{eqsused}.
 
@@ -343,7 +343,7 @@ We start from the Wilson Poisson Flow (\ref{wilflow}):
 \begin{align}
   M(r,t) \verifiedeq X^\mathcal{W}_{r}(t;a,b,c,d) &= \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,H_n(t)\,\exp(-n(n+a+b+c+d-1)r)
 \end{align} 
-For brevity we also set $H_n(t) \defeq {}_4F_3\left(\left[-n, n+a+b+c+d-1,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)$.
+For brevity we have set $H_n(t) \defeq {}_4F_3\left(\left[-n, n+a+b+c+d-1,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)$.
 \begin{lemma}\label{proofWil1} The function $M(r,t) \verifiedeq X^\mathcal{W}_{r}(t;a,b,c,d)$ satisfies the differential difference equation: 
 \begin{align}
  \frac{\partial}{\partial r}M(r,t) \verifiedeq -B(t)\,M(r,t+i) +\left(B(t)+D(t)\right)M(r,t)- D(t)\,M(r,t-i) \label{WilDDE}
@@ -569,29 +569,29 @@ This results in the list of "toy" expansions and the closed forms for their $n-$
 \begin{thebibliography}{} 
 \bibitem{rom}
 Romik, D. \emph{Orthogonal polynomial expansions for the Riemann xi function in the Hermite, Meixner-Pollaczek, and continuous Hahn bases.}, Acta Arithmetica 200 (2021), 259-329.
-Note: this paper exists in two different versions with different titles. See this page: https://www.math.ucdavis.edu/~romik/riemannxi/ for additional information and related resources. 
+Note: this paper exists in two different versions with different titles. See this page: https://www.math.ucdavis.edu/~romik/riemannxi/ for additional information and related resources. \\
 \bibitem{pol}
-D. H. J. Polymath, \emph{Effective approximation of heat flow evolution of the Riemann $\xi$ function, and a new upper bound for the de Bruijn-Newman constant}, Polymath 15 project, https://arxiv.org/abs/1904.12438.
+D. H. J. Polymath, \emph{Effective approximation of heat flow evolution of the Riemann $\xi$ function, and a new upper bound for the de Bruijn-Newman constant}, Polymath 15 project, https://arxiv.org/abs/1904.12438.\\
 \bibitem{arb}
 Johansson, F. et al, \emph{FLINT/ARB - a C library for arbitrary-precision ball arithmetic}, https://flintlib.org.
 \bibitem{map}
-Maplesoft, \emph{Mathematics-based software solutions}, https://www.maplesoft.com.
+Maplesoft, \emph{Mathematics-based software solutions}, https://www.maplesoft.com.\\
 \bibitem{koe}
-Roelof Koekoek, Peter A. Lesky,René F. Swarttouw, \emph{Hypergeometric Orthogonal Polynomials and Their q-Analogues}, Springer, 2010, DOI 10.1007/978-3-642-05014-5
+Roelof Koekoek, Peter A. Lesky,René F. Swarttouw, \emph{Hypergeometric Orthogonal Polynomials and Their q-Analogues}, Springer, 2010, DOI 10.1007/978-3-642-05014-5\\
 \bibitem{koesup}
-Tom H. Koornwinder, \emph{Additions to the formula lists in “Hypergeometric orthogonal polynomials and their q-analogues” by Koekoek, Lesky and Swarttouw}, May 23, 2024, https://staff.fnwi.uva.nl/t.h.koornwinder/art/informal/KLSadd.pdf
+Tom H. Koornwinder, \emph{Additions to the formula lists in “Hypergeometric orthogonal polynomials and their q-analogues” by Koekoek, Lesky and Swarttouw}, May 23, 2024, https://staff.fnwi.uva.nl/t.h.koornwinder/art/informal/KLSadd.pdf\\
 \bibitem{rot}
-B. Rodgers and T. Tao. \emph{The De Bruijn-Newman constant is non-negative.}, ArXiv e-prints, 2018. https://arxiv.org/abs/ 1801.05914
+B. Rodgers and T. Tao. \emph{The De Bruijn-Newman constant is non-negative.}, ArXiv e-prints, 2018. https://arxiv.org/abs/ 1801.05914\\
 \bibitem{dob}
-Dobner, A, \emph{A proof of Newman’s Conjecture for the extended Selberg class}, Acta Arithmetica 201 (2021), https://arxiv.org/abs/2005.05142
+Dobner, A, \emph{A proof of Newman’s Conjecture for the extended Selberg class}, Acta Arithmetica 201 (2021), https://arxiv.org/abs/2005.05142\\
 \bibitem{pla}
-Platt, D., Trudgian, T., \emph{The Riemann hypothesis is true up to $3\,10^{12}$}, Bulletin of the London Mathematical Society, Volume 53, Issue 3, Pages: 643-962, June 2021
+Platt, D., Trudgian, T., \emph{The Riemann hypothesis is true up to $3\,10^{12}$}, Bulletin of the London Mathematical Society, Volume 53, Issue 3, Pages: 643-962, June 2021\\
 \bibitem{genoverview}
-Hari Mohan Srivastava, \emph{Some Families of Generating Functions Associated with Orthogonal Polynomials and Other Higher Transcendental Functions}, MDPI, Mathematics 2022, 10(20), 3730; https://doi.org/10.3390/math10203730
+Hari Mohan Srivastava, \emph{Some Families of Generating Functions Associated with Orthogonal Polynomials and Other Higher Transcendental Functions}, MDPI, Mathematics 2022, 10(20), 3730; https://doi.org/10.3390/math10203730\\
 \bibitem{meipolgen}
-Wolter Groenevelt, Erik Koelink, Hjalmar Rosengren, \emph{Continuous Hahn functions as Clebsch-Gordan coefficients}, February 20, 2003, https://arxiv.org/abs/math/0302251v1
+Wolter Groenevelt, Erik Koelink, Hjalmar Rosengren, \emph{Continuous Hahn functions as Clebsch-Gordan coefficients}, February 20, 2003, https://arxiv.org/abs/math/0302251v1\\
 \bibitem{connex}
-Michael A. Baeder, Howard S. Cohl, Hans Volkmer, \emph{Generalizations of generating functions for higher continuous hypergeometric orthogonal polynomials in the Askey scheme}, Journal of Mathematical Analysis and Applications, Elsevier, Volume 427, Issue 1, 1 July 2015, Pages 377-398
+Michael A. Baeder, Howard S. Cohl, Hans Volkmer, \emph{Generalizations of generating functions for higher continuous hypergeometric orthogonal polynomials in the Askey scheme}, Journal of Mathematical Analysis and Applications, Elsevier, Volume 427, Issue 1, 1 July 2015, Pages 377-398\\
 \bibitem{git} 
 Dolph Dwars, Kalpesh Muchhal, \emph{GitHub environment with all code, data and graphs of this project}, https://github.com/km-git-acc/riemann-poly-expansions
 \end{thebibliography}{} 
@@ -742,10 +742,10 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
   M_n(a,b,c,d) &\defeq \frac{2\pi(\kappa_n)_nn!\Gamma(n+a+b)\Gamma(n+a+c)\Gamma(n+a+d)\Gamma(n+b+c)\Gamma(n+b+d)\Gamma(n+c+d)}{\Gamma(2n+a+b+c+d)}\\
   w_x(a,b,c,d) &\defeq \left|\frac{\Gamma(a+ix)\,\Gamma(b+ix)\,\Gamma(c+ix)\,\,\Gamma(d+ix)}{\Gamma(2ix)}\right|^2 \\
   f_n(a,b,c,d) &\verifiedeq \frac{(a+b)_n^2\,(a+c)_n^2\,(a+d)_n^2\,\Gamma(2n+a+b+c+d)}{2\pi\,(\kappa_n)_n\Gamma(n+a+b)\Gamma(n+a+c)\Gamma(n+a+d)n!\Gamma(n+b+c)\Gamma(n+b+d)\Gamma(n+c+d)}\\
-  -n\,\kappa_n\,y(x) &\verifiedeq -B(x)\,y(x+i)+\left(B(x)+D(x)\right)\,y(x)-D(x)\,y(x-i) \\ \label{wildde}
+  -n\,\kappa_n\,y(x) &\verifiedeq -B(x)\,y(x+i)+\left(B(x)+D(x)\right)\,y(x)-D(x)\,y(x-i)\label{wildde} \\ 
   B(x)&\verifiedeq \frac{(a-ix)\,(b-ix)\,(c-ix)\,(d-ix)}{2ix\,(2ix-1)} \\
   D(x)&\verifiedeq \frac{(a+ix)\,(b+ix)\,(c+ix)\,(d+ix)}{(2ix\,(2ix+1)} \\
-  X^\mathcal{W}_r(t;a,b,c,d)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,{}_4F_3\left(\left[-n, \kappa_n,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)\,\exp\left(-n\,\kappa_n\,r\right) \\ \label{wilflow}
+  X^\mathcal{W}_r(t;a,b,c,d)\left[F(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b,c,d)\,{}_4F_3\left(\left[-n, \kappa_n,a+it, a- it\right], \left[a+b, a+c, a+d\right], 1\right)\,\exp\left(-n\,\kappa_n\,r\right) \label{wilflow} \\
   \gamma_n(a,b,c,d) &\verifiedeq f_n(a,b,c,d)\int_{0}^{\infty} F(x)\,w_x(){}_4F_3\left(\left[-n, \kappa_n,a+ix, a- ix\right], \left[a+b, a+c, a+d\right], 1\right)\,\mathrm{d}x \\
   \sum_{n=0}^\infty \gamma_n(a,b,c,d) &\verifiedeq \Xi(\pm ia) \\
   \frac{\mathrm{d}}{\mathrm{d} r} z_k(r)&\verifiedeq B\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1+\frac{i}{z_k(r)-z_j(r)}\right)+D\big(Z_k(r)\big)\,\prod_{j \ne k}^{'} \left(1-\frac{i}{z_k(r)-z_j(r)}\right) \\
@@ -982,7 +982,7 @@ X^\mathcal{W}_r(t;a,b)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_
   \gamma_n(a,b) &\verifiedeq \frac{2^{2n+2a}}{(2n)!\left(a+b+n-\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h1(x,n,a,b)\,\mathrm{d}x
 \end{align}
 
-Secondly, we illustrate the steps towards the expansion of $\Xi'(t)$ also for path \ref{path5}: 
+Secondly, we illustrate the steps towards the expansion of $\Xi'(t)/t$ also for path \ref{path5}: 
 \begin{align}
  \sum_{n=0}^\infty P_{2n+1}^{(a)}\left(t;\frac{\pi}{2}\right)\,x^{2n+1} &\defeq\sum_{n=0}^\infty \frac{(2a)_{2n+1}}{2^{2n+1}\,\left(a+b-\frac12\right)_{2n+2}} \sum_{m=0}^{\lfloor n+\frac12 \rfloor} (-1)^m\,\left(2n-2m+a+b+\frac12\right)\,\binom{2n+a+b+\frac12}{m}\, \notag\\ &\quad\times \frac{(2a+2b-1)_{2n+1-2m}}{(2a)_{2n+1-2m}(a+b)_{2n+1-2m}}  p_{2n+1-2m}(t;a,b,a,b)\,x^{2n+1} \notag \\
  &\defeq\sum_{n=0}^\infty \frac{(2a)_{2n+1}}{2^{2n+1}\,\left(a+b-\frac12\right)_{2n+2}} \sum_{m=0}^{\lfloor n+\frac12 \rfloor} (-1)^m\,\left(2n-2m+a+b+\frac12\right)\,\binom{2n+a+b+\frac12}{m}\, \notag \\ &\quad\times\frac{(2a+2b-1)_{2n+1-2m}}{(2a)_{2n+1-2m}(a+b)_{2n+1-2m}} \frac{(-1)^{n-m}\,2^{2n+1-2m}\,\Gamma(a+b+2n+1-2m)}{(2n+1-2m)!\,\Gamma(a+b+n-m)}\,t\,W_{n-m}\left(t^2;a,b,\frac12,1\right)\,x^{2n+1}\notag \\
@@ -1005,9 +1005,9 @@ Our target integral representation of $\Xi'(t) = -\Xi'(-t)$ is:
  &\verifiedeq -4^a\,t\,\int_{-\infty}^\infty \Phi(x)\,\left(\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\, \,h2(x,n,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n+1}\right)\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\, \mathrm{d}x \\
  &\verifiedeq -4^a\,t\,\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h2(x,n,a,b)\,\mathrm{d}x
 \end{align}
-where $\Phi(x)$ is defined in table (\ref{tab:tablefunc}). A simple rearranging of the factors yields the desired Flow of $\Xi'(t)$:
+where $\Phi(x)$ is defined in table (\ref{tab:tablefunc}). A simple rearranging of the factors yields the desired Flow of $\Xi'(t)/t$:
 \begin{align}
-X^\mathcal{W}_r(t,a,b)\left[\Xi'(t)\right] &\verifiedeq t\,\sum_{n=0}^\infty \gamma_n(a,b)\,W_n\left(t^2;a,b,\frac12,1\right)\,r^n \\
+X^\mathcal{W}_r(t,a,b)\left[\Xi'(t)/t\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b)\,W_n\left(t^2;a,b,\frac12,1\right)\,r^n \\
   \gamma_n(a,b) &\verifiedeq \frac{-2^{2n+2a+1}}{(2n+1)!\left(a+b+n+\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h2(x,n,a,b)\,\mathrm{d}x
 \end{align}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.6)  1 DEC 2024 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.6)  1 DEC 2024 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -777,9 +777,64 @@ Overfull \hbox (19.05269pt too wide) in paragraph at lines 556--565
  []
 
 [12]
+Underfull \hbox (badness 10000) in paragraph at lines 571--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 584--585
+
+ []
+
+
 Underfull \hbox (badness 2057) in paragraph at lines 586--587
 []\OT1/txr/m/n/9 Dobner, A, \OT1/txr/m/it/9 A proof of New-man's Con-jec-ture f
 or the ex-tended Sel-berg class\OT1/txr/m/n/9 , Acta Arith-metica 201 (2021),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--589
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 590--591
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 592--593
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 594--595
+
  []
 
 
@@ -798,7 +853,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 605--623
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 5091) has occurred while \output is active []
 
  [13]
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -972,7 +1027,7 @@ ansionsRiemannXiv2.out' has not changed.
 Here is how much of TeX's memory you used:
  15101 strings out of 478268
  242302 string characters out of 5846348
- 644655 words of memory out of 5000000
+ 643655 words of memory out of 5000000
  32556 multiletter control sequences out of 15000+600000
  524694 words of font info for 158 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -992,7 +1047,7 @@ b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/txfonts/txtt.pfb></usr
 live/2022/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2022/
 texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
 Output written on VisualisingtheflowsoforthogonalpolynomialexpansionsRiemannXiv
-2.pdf (31 pages, 2541345 bytes).
+2.pdf (31 pages, 2541375 bytes).
 PDF statistics:
  767 PDF objects out of 1000 (max. 8388607)
  631 compressed objects within 7 object streams
