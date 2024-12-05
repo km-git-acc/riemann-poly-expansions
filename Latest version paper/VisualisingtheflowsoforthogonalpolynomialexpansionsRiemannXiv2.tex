@@ -491,14 +491,12 @@ For the DDEs we evaluate the product of zeros $F\verifiedeq \Xi(t), z_n=\Im(\rho
 \end{enumerate}
 
 \section{Overview of the results} \label{results}
-In appendix \ref{eqsused}, we list all relevant equations for each orthogonal polynomial family in scope. The visuals of the flows are also included there. For the Generalised Laguerre family, we found that computing the $\frac{\partial^{d}}{\partial t^{d}} X^{\mathcal{\phi}}_r(t)$, where $d$ is the $d$-th partial $t$-derivative of the flow, could be done almost for "free". For this family we have included (but not coded) the extended equation.  
-
+In appendix \ref{eqsused}, we list all relevant equations for each orthogonal polynomial family in scope. The visuals of the flows for a specific sets of parameters are also included there. In support of our conclusions below, we did produce much more data using different parameters to understand the impact on the flows and the asymptotics of the coefficients (data is available on our github \cite{git}). For the Generalised Laguerre family, we found that computing the $\frac{\partial^{d}}{\partial t^{d}} X^{\mathcal{\phi}}_r(t)$, where $d$ is the $d$-th partial $t$-derivative of the flow, could be done almost for "free". For this family we have included (but not coded) the extended equation.  
 Formally, the flows should only be valid for $r > 0$, however computations showed that these could be extended into the negative domain yielding further insights. For $F=\Xi(t)$ we see two types of flows in the domain $r > 0$:
 \begin{itemize}
   \item \textit{Type A:} All collisions seem to occur here (and no collisions for $r < 0$).
   \item \textit{Type B:} No collisions seem to occur here (and all collisions for $r < 0$).
 \end{itemize}
-
 Note that to properly compare the new Poisson flows with the Polya-De Bruijn flow, the latter should be vertically "flipped" ($\lambda = -\lambda$) so it becomes a type A. The reason is the negative mapping $\exp(-r)$ that we have applied to the other Poisson flows. 
 
 In the table \ref{tab:tablefindings} we summarize the flow type we see for each family. We also include an observation about the behaviour of the coefficients (i.e. whether they are always positive/negative/alternating and/or increase/decrease monotone).
@@ -521,15 +519,14 @@ In the table \ref{tab:tablefindings} we summarize the flow type we see for each 
   \end{center}
 \end{table}
 
-
 \section{Discussion and concluding remarks}\label{concremarks}
 
 We have demonstrated that visualising the Poisson flows is computationally tractable at limited heights. The visualised flows could provide potentially new perspectives on the evolution of the real zeros of $\Xi(t)$ and $\Xi_i(t)$ as well as their governing laws. In this section we summarise a few of our key insights.
  
 \begin{itemize}
   \item We start with a realistic observation. The common characteristic of all Poisson flows is that they start off with a distortion/approximation of the original functions $\Xi(t), \Xi_i(t)$ at $r=0$ where the complexity already seems highest. We observe that over time, information seems to flow from $r=0$ towards later or earlier phases. In these less complex 'distorted' domains ($r \ne 0$) we see trajectories either collide or converge towards an arithmetic progression. Unfortunately, we do not (yet) see any information gained from this 'distorted' domain that could tell us more about the distribution of the zeros at $r=0$. 
-\item However, on a more positive note, we find it really encouraging to see that the visualised flows for each expansion can be categorised into two distinct types and this raises new questions. It seems that all type A flows are driven by PDEs (and sums of zeros) and all type B flows by DDEs (and products of zeros). Since transformations based on infinite relations between both types of families exist, we wonder at which point collisions will flip from the domain $r < 0$ to $r > 0$. 
-\item Romik demonstrates in section 3.5 of \cite{rom}, that the Differential Difference Equation (DDE) that underpins the dynamical evolution of the real zeros of the Meixner Pollaczek expansion no longer preserves the property of "hyperbolicity". However, the visualised Poisson flow suggests that a form of "hyperbolicity" is being preserved, but into the positive direction of "time" $r$. We observe the same for the other family's DDEs: in the domain $r > 0$ the flows tend to 'cool down' with time and trajectories of real zeros eventually organise themselves into an arithmetic progression. Could it be that "hyperbolicity" is maintained for $r > 0$ ? 
+\item However, on a more positive note, we find it really encouraging to see that the visualised flows for each expansion can be categorised into two distinct types and this raises new questions. It seems that all type A flows are driven by PDEs (and sums of zeros) and all type B flows by DDEs (and products of zeros). Both worlds are only connected through two limit relations between the Meixner-Pollaczek and the Generalised Laguerre family (eq. (9.7.14) in \cite{koe}) or between the Meixner-Pollaczek and Hermite family (eq. (9.7.15) in \cite{koe}). This raises the interesting follow-up question at which point in these limiting relations, the collisions will flip from the domain $r < 0$ to $r > 0$. 
+\item Romik demonstrates in section 3.5 of \cite{rom}, that the Differential Difference Equation (DDE) that underpins the dynamical evolution of the real zeros of the Meixner-Pollaczek expansion no longer preserves the property of "hyperbolicity". However, the visualised Poisson flow suggests that a form of "hyperbolicity" is being preserved, but into the positive direction of "time" $r$. We observe the same for the other family's DDEs: in the domain $r > 0$ the flows tend to 'cool down' with time and trajectories of real zeros eventually organise themselves into an arithmetic progression. Could it be that "hyperbolicity" is maintained for $r > 0$ ? 
 \item In chapter 7 "Final remarks" of \cite{rom}, Romik makes the observation that:
 \begin{quotation}
 \textit{One rather striking fact is that the four different series expansions} (i.e. Pólya-De Bruijn, Hermite, Meixner Pollaczek, Continuous Hahn) \textit{we have considered for the Riemann $\Xi$ function, exhibit remarkably similar structural similarities: namely, in all four expansions the coefficients appear with alternating signs (and their asymptotics can be understood to a good level of accuracy, as our analysis shows). It is intriguing to wonder about the significance of this structural property of $\Xi(t)$. Can this information be exploited somehow to derive information about the location of the zeros of $\Xi(t)$? By way of comparison, one can consider “toy” expansions of the above forms involving more elementary coefficient sequences.}
@@ -766,9 +763,9 @@ ZP(k,c) &\verifiedeq \prod_{j \ne k}^{'} \left(1-\frac{c}{2\pi k-2\pi j}\right)=
 
 There is a limited set of orthogonal polynomial families whose generating functions can be directly associated with the kernel of the Fourier cosine transform of $\Xi(t)$ or the sine transform of $\Xi{\prime}(t)$ (see Table \ref{tab:tablefunc}). Such a connection arises from the closed form of the generating functions, which can be expressed using specific parameters and extended to a broader domain through an appropriate mapping.
 
-Once this link is established, known relationships between different polynomial families can be utilized to progress within the Askey scheme. In some cases, this transition is achieved through a straightforward equation involving a single parameter. However, when an additional parameter is required, a finite sum formula becomes necessary. The table below presents a streamlined version of our results for the expansions of $\Xi(t)$, displaying only the integral components of the simplified coefficients for easier comparison. Full expressions, including those for $\Xi{\prime}(t)$, along with detailed derivations, are provided in subsequent sections. 
+Once this link is established, known relationships between different polynomial families can be utilized to progress within the Askey-scheme. In some cases, this transition is achieved through a straightforward equation involving a single parameter. However, when an additional parameter is required, a finite sum formula becomes necessary. The table below presents a streamlined version of our results for the expansions of $\Xi(t)$, displaying only the integral components of the simplified coefficients for easier comparison. The full expressions, including those for $\Xi'(t)/t$, along with detailed derivations, are provided in subsequent sections. 
 
-These simplified expressions are particularly valuable for expediting computations and providing a more accessible foundation for analyzing the asymptotic behavior of the expansion coefficients.
+These simplified expressions are particularly valuable for expediting computations and for analysing the asymptotics of the expansion's coefficients.
 
 \noindent\fbox{\begin{minipage}{\textwidth}
 \begin{table}[H]
@@ -783,12 +780,12 @@ These simplified expressions are particularly valuable for expediting computatio
       $L^{\alpha}_n(t)$ & $\displaystyle  \int_{-\infty}^{\infty} \Phi(x)\,\left(\frac{ix}{ix+1}\right)^n\,\left(\frac{1}{ix+1}\right)^{\alpha+1}\,\mathrm{d}x $  &$\Xi(t)$ \\
       $P_{2n}^{(a)}\left(t;\frac{\pi}{2}\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\,\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,\mathrm{d}x $  &$\Xi(t)$ \\ 
       $p_{2n}\left(\frac{t}{2};\frac{a}{2},\frac{a+1}{2},\frac{a}{2},\frac{a+1}{2}\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\,\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^{x}+1)^{2a}}\,\mathrm{d}x $  &$\Xi(t)$ \\   
-      $p_{2n}\left(t;a,b,a,b\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\,\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^{x}+1)^{2a}}\,hg1(x,n,a,b)\,\mathrm{d}x$  &$\Xi(t)$ \\                  
+      $p_{2n}\left(t;a,b,a,b\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\,\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^{x}+1)^{2a}}\,hg1_n(x,a,b)\,\mathrm{d}x$  &$\Xi(t)$ \\                  
       $S_{n}\left(t^2;a,\frac12,0\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,\mathrm{d}x$  &$\Xi(t)$ \\
-      $S_{n}\left(t^2;a,b,\frac12\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,hg2(x,n,a,b) \,\mathrm{d}x $  &$\Xi(t)$ \\
-      $W_n\left(t^2;a,b,\frac12,0\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,hg3(x,n,a,b)\,\mathrm{d}x$ &$\Xi(t)$ \\
+      $S_{n}\left(t^2;a,b,\frac12\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,hg2_n(x,a,b) \,\mathrm{d}x $  &$\Xi(t)$ \\
+      $W_n\left(t^2;a,b,\frac12,0\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,hg3_n(x,a,b)\,\mathrm{d}x$ &$\Xi(t)$ \\
       $W_{n}\left(\left(\frac{t}{2}\right)^2;\frac{a}{2},\frac{a+1}{2},\frac12,0\right) $ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,\mathrm{d}x$ &$\Xi(t)$ \\
-      $W_{n}\left(\left(\frac{t}{2}\right)^2;\frac{a}{2},\frac{a+1}{2},\frac{b}{2},\frac{b+1}{2}\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}} \,hg2(x,n,a,b) \,\mathrm{d}x$ &$\Xi(t)$ \\
+      $W_{n}\left(\left(\frac{t}{2}\right)^2;\frac{a}{2},\frac{a+1}{2},\frac{b}{2},\frac{b+1}{2}\right)$ & $\displaystyle \int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}} \,hg2_n(x,a,b) \,\mathrm{d}x$ &$\Xi(t)$ \\
       $W_n\left(\left(\frac{t}{2}\right)^2;\frac12,0,\frac12,0\right)$ & $\displaystyle \int_{-\infty}^\infty \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\, \mathrm{d}x $  &$\Xi(0) + \Xi(t)$ \\    
       $W_n\left(\left(\frac{t}{2}\right)^2;\frac12,1,\frac12,1\right)$ & $\displaystyle \int_{-\infty}^\infty \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+2}\, \mathrm{d}x $  &$\left(\Xi(0)-\Xi(t)\right)/t^2 $ \\       
     \end{tabular}
@@ -796,15 +793,14 @@ These simplified expressions are particularly valuable for expediting computatio
 \end{table}
 where $\Phi(x)$ is defined in table (\ref{tab:tablefunc}) and:
 \begin{align}
- hg1(x,n,a,b) &\defeq {}_2F_1\left(\left[a+\frac{n}{2}, a+\frac{n+1}{2}\right],\left[a+b+n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right) \notag \\
- hg2(x,n,a,b) &\defeq {}_2F_1\left(\left[-b, a+n+\frac12\right],\left[n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right) \notag \\
- hg3(x,n,a,b) &\defeq {}_2F_1\left(\left[a+n, a+n+\frac12\right],\left[a+b+2n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right) \notag
+ hg1_n(x,a,b) &\defeq {}_2F_1\left(\left[a+\frac{n}{2}, a+\frac{n+1}{2}\right],\left[a+b+n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right) \notag \\
+ hg2_n(x,a,b) &\defeq {}_2F_1\left(\left[-b, a+n+\frac12\right],\left[n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right) \notag \\
+ hg3_n(x,a,b) &\defeq {}_2F_1\left(\left[a+n, a+n+\frac12\right],\left[a+b+2n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right) \notag
 \end{align} 
 \end{minipage}}
 
-
 \begin{proposition}
-The coefficients of the Hermite polynomial expansion of $\Xi(t)$ and $\Xi'(t)$ can also be written into the simpler forms: 
+The coefficients of the Hermite polynomial expansion of $\Xi(t)$ and $\Xi'(t)$ can also be written as: 
 \begin{align}
 X^{\mathcal{H}}_r(t)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}\,H_{2n}(t)\,r^{2n} \label{herm1}\\ 
 \gamma_n &\verifiedeq \frac{i^n}{2^{n}\,n!}\int_{-\infty}^{\infty} \Phi(x)\,x^n\,\mathrm{e}^{-x^2/4}\,\mathrm{d}x \\
@@ -819,8 +815,8 @@ We start from the formal definition of the Hermite polynomial family:
 \end{equation}
 Take its generating function for $2n$ and apply the mapping $x \mapsto \dfrac{ix}{2}$:
 \begin{align}
- \sum_{n=0}^\infty \frac{H_{2n}(t)}{(2n)!}\, x^{2n} &\verifiedeq \mathrm{e}^{-x^2}\,\cosh(2xt) \ \qquad |x| < 1 \\
- \sum_{n=0}^\infty \frac{H_{2n}(t)}{(2n)!}\,\left(\frac{ix}{2}\right)^{2n} &\verifiedeq  \mathrm{e}^{x^2/4} \cos(tx)\qquad |x| \in \mathbb{R}
+ \sum_{n=0}^\infty \frac{H_{2n}(t)}{(2n)!}\, x^{2n} &\verifiedeq \mathrm{e}^{-x^2}\,\cosh(2xt) \ \qquad x \in \mathbb{R} \\
+ \sum_{n=0}^\infty \frac{H_{2n}(t)}{(2n)!}\,\left(\frac{ix}{2}\right)^{2n} &\verifiedeq  \mathrm{e}^{x^2/4} \cos(tx)\qquad x \in \mathbb{R}
 \end{align}
 Our target integral representation of $\Xi(t) = \Xi(-t)$ is:
 \begin{align}
@@ -831,13 +827,12 @@ Our target integral representation of $\Xi(t) = \Xi(-t)$ is:
 \end{align}
 and the result follows. Note that $\Phi(x)$ is defined in table (\ref{tab:tablefunc}).
 \end{proof}
-
 Similarly for $\Xi'(t)$. 
 \begin{proof}
 Take the generating function for $2n+1$ and apply the mapping $x \mapsto \dfrac{ix}{2}$:
 \begin{align}
- \sum_{n=0}^\infty \frac{H_{2n+1}(t)}{(2n+1)!}\, x^{2n+1} &\verifiedeq \mathrm{e}^{-x^2}\,\sinh(2xt) \ \qquad |x| < 1 \\
- \sum_{n=0}^\infty \frac{H_{2n+1}(t)}{(2n+1)!}\,\left(\frac{ix}{2}\right)^{2n+1} &\verifiedeq  \mathrm{e}^{x^2/4}\,i\,\sin(tx)\qquad |x| \in \mathbb{R}
+ \sum_{n=0}^\infty \frac{H_{2n+1}(t)}{(2n+1)!}\, x^{2n+1} &\verifiedeq \mathrm{e}^{-x^2}\,\sinh(2xt) \ \qquad x \in \mathbb{R} \\
+ \sum_{n=0}^\infty \frac{H_{2n+1}(t)}{(2n+1)!}\,\left(\frac{ix}{2}\right)^{2n+1} &\verifiedeq  \mathrm{e}^{x^2/4}\,i\,\sin(tx)\qquad x \in \mathbb{R}
 \end{align}
 Our target integral representation of $\Xi'(t) = -\Xi'(-t)$ is:
 \begin{align}
@@ -909,7 +904,7 @@ A finite sum connection between the Meixner-Pollaczek and Continuous Hahn famili
 p^*_n(t;a,b,a,b) &\defeq \sum_{k=0}^{\lfloor n/2\rfloor} \frac{2^{n-2k}\,\left(a+b-\frac12\right)_{n-k}}{k!\,(2a)_{n-2k}}\,P_{n-2k}^{(a)}\left(t,\frac{\pi}{2}\right) \\ 
 P_n^{(a)}\left(t;\frac{\pi}{2}\right) &\defeq \frac{(2a)_n}{2^n\,\left(a+b-\frac12\right)_{n+1}}\,\sum_{k=0}^{\lfloor n/2\rfloor} (-1)^k\,\left(n-2k+a+b-\frac12\right)\,\binom{n+a+b-\frac12}{k}\,p^*_{n-2k}(t;a,b,a,b) \label{con2}
 \end{align}
-The proof of the above relations follows the same steps as the proof for the special case $a=\frac34$ in appendix (A.6) of Romik's extended paper \cite{rom}. In his he uses a slightly different definition and since we will be building on his work we will also introduce $p^*_n(t;a,b,c,d)$ in the above to make the proof easier to follow. The steps of the proof are not repeated here, since the only difference is that in equation (A.45) we have to start with $p\verifiedeq n-m$ and $q\verifiedeq m+a+b-\frac32$ and in equation (A.49) we have to use $N \verifiedeq n + a+b - \frac12, m \verifiedeq m +a+b-\frac32$ (note there is an innocent typo in (A.49), the last factor in the RHS should be $2^{n-m-1}$ instead of $2^{n-m+1}$).
+The proof of the above relations follows the same steps as the proof for the special case $a=\frac34$ in appendix (A.6) of Romik's extended paper \cite{rom}. In his analysis, he uses a slightly different definition and since we will be building on his work we will also introduce $p^*_n(t;a,b,c,d)$ in the above to make the proof easier to follow. The steps of the proof are not repeated here, since the only difference is that in equation (A.45) we have to start with $p\verifiedeq n-m$ and $q\verifiedeq m+a+b-\frac32$ and in equation (A.49) we have to use $N \verifiedeq n + a+b - \frac12, m \verifiedeq m +a+b-\frac32$ (note there is an innocent typo in (A.49), the last factor in the RHS should be $2^{n-m-1}$ instead of $2^{n-m+1}$).
 
 A direct quadratic connection between the Continuous Hahn and Wilson families is (see eq. 22, 27 and 28, in \cite{koesup}.
 \begin{align}
@@ -917,7 +912,7 @@ A direct quadratic connection between the Continuous Hahn and Wilson families is
  p_{2n+1}(t;a,b,a,b) &\defeq \frac{(-1)^n\,2^{2n+1}\,(a+b+n)_{n+1}}{(2n+1)!}\,t\, W_n\left(t^2;a,b,\frac12,1\right) \label{con31}
 \end{align}
 
-Direct quadratic connections between the Meixner-Pollaczek and Continuous Dual Hahn families are (see eq. 24, 48 and 50 in \cite{koesup}.
+Direct quadratic connections between the Meixner-Pollaczek and Continuous Dual Hahn families are (see eq. 24, 48 and 50 in \cite{koesup}).
 \begin{align}
  P_{2n}^{(a)}\left(t;\frac{\pi}{2}\right) &\defeq \frac{(-1)^n\,2^{2n}}{(2n)!}\,S_n\left(t^2;a,\frac12,0\right) \label{con4} \\
  P_{2n+1}^{(a)}\left(t;\frac{\pi}{2}\right) &\defeq \frac{(-1)^n\,2^{2n+1}}{(2n+1)!}\,t\,S_n\left(t^2;a,\frac12,1\right) \label{con41}
@@ -964,22 +959,22 @@ To obtain the hypergeometric function in the third step, we introduced the new s
 
 Apply the mapping $x \mapsto \left(i\,\dfrac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)$ to the last two equations to make it converge for $x \in \mathbb{R}$ and change $k$ into $n$:
 \begin{align}
-\sum_{n=0}^\infty \frac{2^{2n}\,W_n\left(t^2;a,b,\frac12,0\right)}{(2n)!\left(a+b+n-\frac12\right)_n}\, \,h1(x,n,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n} \verifiedeq 4^{-a}\cos(tx)\,\mathrm{e}^{-ax}\left(\mathrm{e}^x+1\right)^{2a} 
+\sum_{n=0}^\infty \frac{2^{2n}\,W_n\left(t^2;a,b,\frac12,0\right)}{(2n)!\left(a+b+n-\frac12\right)_n}\, \,h1_n(x,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n} \verifiedeq 4^{-a}\cos(tx)\,\mathrm{e}^{-ax}\left(\mathrm{e}^x+1\right)^{2a} 
 \end{align}
 
-where $$h1(x,n,a,b) \defeq {}_2F_1\left(\left[a+n, a+n+\frac12\right],\left[a+b+2n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right)$$
+where $$h1_n(x,a,b) \defeq {}_2F_1\left(\left[a+n, a+n+\frac12\right],\left[a+b+2n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right)$$
 
 Our target integral representation of $\Xi(t) = \Xi(-t)$ is:
 \begin{align}
  \Xi(t) &\verifiedeq \int_{-\infty}^\infty \Phi(x)\cos(tx)\, \mathrm{d}x \\
  &\verifiedeq 4^a\,\int_{-\infty}^\infty \Phi(x)\,\cos(tx)\,4^{-a}\,(\mathrm{e}^x+1)^{2a}\,\mathrm{e}^{-ax} \,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}} \mathrm{d}x \\
- &\verifiedeq 4^a\,\int_{-\infty}^\infty \Phi(x)\,\left(\sum_{n=0}^\infty \frac{2^{2n}\,W_n\left(t^2;a,b,\frac12,0\right)}{(2n)!\left(a+b+n-\frac12\right)_n}\, \,h1(x,n,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n}\right)\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\, \mathrm{d}x \\
- &\verifiedeq 4^a\,\,\sum_{n=0}^\infty \frac{2^{2n}\,W_n\left(t^2;a,b,\frac12,0\right)}{(2n)!\left(a+b+n-\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h1(x,n,a,b)\,\mathrm{d}x
+ &\verifiedeq 4^a\,\int_{-\infty}^\infty \Phi(x)\,\left(\sum_{n=0}^\infty \frac{2^{2n}\,W_n\left(t^2;a,b,\frac12,0\right)}{(2n)!\left(a+b+n-\frac12\right)_n}\, \,h1_n(x,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n}\right)\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\, \mathrm{d}x \\
+ &\verifiedeq 4^a\,\,\sum_{n=0}^\infty \frac{2^{2n}\,W_n\left(t^2;a,b,\frac12,0\right)}{(2n)!\left(a+b+n-\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h1_n(x,a,b)\,\mathrm{d}x
 \end{align}
 where $\Phi(x)$ is defined in table (\ref{tab:tablefunc}). A simple rearranging of the factors yields the desired expansion of $\Xi(t)$:
 \begin{align}
 X^\mathcal{W}_r(t;a,b)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b)\,W_n\left(t^2;a,b,\frac12,0\right)\,r^n \\
-  \gamma_n(a,b) &\verifiedeq \frac{2^{2n+2a}}{(2n)!\left(a+b+n-\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h1(x,n,a,b)\,\mathrm{d}x
+  \gamma_n(a,b) &\verifiedeq \frac{2^{2n+2a}}{(2n)!\left(a+b+n-\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h1_n(x,a,b)\,\mathrm{d}x
 \end{align}
 
 Secondly, we illustrate the steps towards the expansion of $\Xi'(t)/t$ also for path \ref{path5}: 
@@ -993,27 +988,27 @@ To obtain the hypergeometric function in the third step, we introduced the new s
 
 Apply the mapping $x \mapsto \left(i\,\dfrac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)$ to the last two equations to make it converge for $x \in \mathbb{R}$ and change $k$ into $n$. This gives: 
 \begin{align}
-t\,\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\, \,h2(x,n,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n+1} \verifiedeq 4^{-a}\,\sin(tx)\,\mathrm{e}^{-ax}\left(\mathrm{e}^x+1\right)^{2a} 
+t\,\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\, \,h2_n(x,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n+1} \verifiedeq 4^{-a}\,\sin(tx)\,\mathrm{e}^{-ax}\left(\mathrm{e}^x+1\right)^{2a} 
 \end{align}
 
-where $$h2(x,n,a,b) \defeq {}_2F_1\left(\left[a+n+\frac12, a+n+1\right],\left[a+b+2n+\frac32\right],\tanh\left(\frac{x}{2}\right)^2\right)$$
+where $$h2_n(x,a,b) \defeq {}_2F_1\left(\left[a+n+\frac12, a+n+1\right],\left[a+b+2n+\frac32\right],\tanh\left(\frac{x}{2}\right)^2\right)$$
 
 Our target integral representation of $\Xi'(t) = -\Xi'(-t)$ is:
 \begin{align}
  \Xi'(t) &\verifiedeq -\int_{-\infty}^\infty \Phi(x)\,x\sin(tx)\, \mathrm{d}x \\
  &\verifiedeq -4^a\,\int_{-\infty}^\infty \Phi(x)\,\sin(tx)\,4^{-a}\,(\mathrm{e}^x+1)^{2a}\,\mathrm{e}^{-ax} \,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}} \mathrm{d}x \\
- &\verifiedeq -4^a\,t\,\int_{-\infty}^\infty \Phi(x)\,\left(\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\, \,h2(x,n,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n+1}\right)\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\, \mathrm{d}x \\
- &\verifiedeq -4^a\,t\,\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h2(x,n,a,b)\,\mathrm{d}x
+ &\verifiedeq -4^a\,t\,\int_{-\infty}^\infty \Phi(x)\,\left(\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\, \,h2_n(x,a,b)\,\left(\frac{\textrm{e}^{x}-1}{\textrm{e}^{x}+1}\right)^{2n+1}\right)\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\, \mathrm{d}x \\
+ &\verifiedeq -4^a\,t\,\sum_{n=0}^\infty \frac{2^{2n+1}\,W_n\left(t^2;a,b,\frac12,1\right)}{(2n+1)!\left(a+b+n+\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h2_n(x,a,b)\,\mathrm{d}x
 \end{align}
 where $\Phi(x)$ is defined in table (\ref{tab:tablefunc}). A simple rearranging of the factors yields the desired Flow of $\Xi'(t)/t$:
 \begin{align}
 X^\mathcal{W}_r(t,a,b)\left[\Xi'(t)/t\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b)\,W_n\left(t^2;a,b,\frac12,1\right)\,r^n \\
-  \gamma_n(a,b) &\verifiedeq \frac{-2^{2n+2a+1}}{(2n+1)!\left(a+b+n+\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h2(x,n,a,b)\,\mathrm{d}x
+  \gamma_n(a,b) &\verifiedeq \frac{-2^{2n+2a+1}}{(2n+1)!\left(a+b+n+\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\,h2_n(x,a,b)\,\mathrm{d}x
 \end{align}
 
-We can now summarise all expansions that can be derived in a similar manner using the connections:
+We can now summarise all expansions that can be derived in a similar manner using the various paths:
 
-Poisson flows for expansions into Meixner-Pollaczek polynomials themselves:
+Poisson flows for expansions into \textbf{Meixner-Pollaczek polynomials themselves}:
 \begin{align}
 X^\mathcal{MP}_r(t;a)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}(a)\,P_{2n}^{(a)}\left(t;\frac{\pi}{2}\right)\,r^{2n} \\
 \gamma_n(a) &\verifiedeq 4^a\,i^n\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,\mathrm{d}x \\
@@ -1021,7 +1016,7 @@ X^\mathcal{MP}_r(t;a)\left[\Xi'(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_
 \gamma_n(a) &\verifiedeq 4^a\,i^{n+1}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\frac{x\,\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,\mathrm{d}x
 \end{align}
 
-Poisson flows for expansions into Continuous Hahn polynomials:
+Poisson flows for expansions into \textbf{Continuous Hahn polynomials}:
 \begin{align}
  X^\mathcal{CH}_r(t;a)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{2n}(a)\,p_{2n}\left(\frac{t}{2};\frac{a}{2},\frac{a+1}{2},\frac{a}{2},\frac{a+1}{2}\right)\, r^{2n} \\
 \gamma_n(a) &\verifiedeq \,\frac{2\,4^a\,i^n \,(2a)_n}{(a)_n\,\left(a+\frac12\right)_n} \,\int_{0}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^{x}+1)^{2a}}\,\mathrm{d}x\\
@@ -1036,7 +1031,7 @@ Poisson flows for expansions into Continuous Hahn polynomials:
 \gamma_n(a,b) &\verifiedeq \,\frac{2^{n}\,4^a\,i^{n+1}}{\left(2a+2b+n-1\right)_n} \,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^n\,\frac{x\,\textrm{e}^{a\,x}}{(\textrm{e}^{x}+1)^{2a}}\\ &\quad \times{}_2F_1\left(\left[a+\frac{n}{2}, a+\frac{n+1}{2}\right],\left[a+b+n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right)\,\mathrm{d}x \notag
 \end{align} 
 
-Poisson flows for expansions into Continuous Dual Hahn polynomials:
+Poisson flows for expansions into \textbf{Continuous Dual Hahn polynomials}:
 \begin{align}
 X^\mathcal{CDH}_r(t;a)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_{n}(a)\,S_{n}\left(t^2;a,\frac12,0\right)\,r^{n} \\
 \gamma_n(a) &\verifiedeq \frac{2^{2n}\,4^a}{(2n)!}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n}\,\frac{\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\,\mathrm{d}x \\
@@ -1051,7 +1046,7 @@ X^\mathcal{CDH}_r(t;a)\left[\Xi'(t)/t\right] &\verifiedeq \sum_{n=0}^\infty \gam
 \gamma_n(a,b) &\verifiedeq -\frac{2^{2n+1}\,4^a}{(2n+1)!}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\,\left(\frac{x}{2}\right)^{2n+1}\,\frac{x\,\textrm{e}^{a\,x}}{(\textrm{e}^x+1)^{2a}}\\\ &\quad\times{}_2F_1\left(\left[1-b, n+\frac12+a\right],\left[n+\frac32\right],\tanh\left(\frac{x}{2}\right)^2\right)\,\mathrm{d}x \notag
 \end{align}
 
-Poisson flows for expansions into Wilson polynomials:
+Poisson flows for expansions into \textbf{Wilson polynomials}:
 \begin{align}
 X^\mathcal{W}_r(t;a,b)\left[\Xi(t)\right] &\verifiedeq \sum_{n=0}^\infty \gamma_n(a,b)\,W_n\left(t^2;a,b,\frac12,0\right)\,r^n \\
   \gamma_n(a,b) &\verifiedeq \frac{2^{2n+2a}}{(2n)!\left(a+b+n-\frac12\right)_n}\,\int_{-\infty}^{\infty} \Phi(x)\,\tanh\left(\frac{x}{2}\right)^{2n}\,\frac{\mathrm{e}^{ax}}{(\mathrm{e}^x+1)^{2a}}\\ &\quad \times {}_2F_1\left(\left[a+n, a+n+\frac12\right],\left[a+b+2n+\frac12\right],\tanh\left(\frac{x}{2}\right)^2\right)\,\mathrm{d}x \notag\\
