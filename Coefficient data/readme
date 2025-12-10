@@ -1,2 +1,3 @@
 Coefficient names ending at 'int' are used for the expansion of Xi_i(t) and for Xi(t) otherwise.
 Note that a12 means a=1/2 and am12 = -1/2. The other a+integers are simply the integer values.
+The file ordinateszetazeros is used for numerical checks and to overlay on the graphs.
