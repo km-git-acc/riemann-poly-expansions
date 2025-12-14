@@ -1,1 +1,0 @@
-The code is a combination of the FLINT/ARB language used in a SageMath "wrapper" and the SageMath plotting library. The code requires a pre-computed file with coefficients as input as well as a file with the first few zeros of the Riemann Xi(t) function (all stored in the data-folder).
