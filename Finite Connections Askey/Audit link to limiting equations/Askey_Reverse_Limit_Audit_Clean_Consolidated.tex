@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=22mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,longtable,array,xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!55!black,urlcolor=blue!55!black}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.16}
+\title{Reverse-Connection Audit\\\large Consolidated Status Report and Corrected Ledger}
+\author{Independent review of the V31 manuscript}
+\date{7 November 2026}
+\begin{document}
+\maketitle
+\begin{center}\fcolorbox{black!30}{blue!4}{\parbox{0.88\linewidth}{\centering
+\textbf{54 recorded PASS relations}\quad\textbf{54/54 unique V31 source labels}\\[3pt]
+\textbf{Global mathematical and KLS completeness: NOT CERTIFIED}}}\end{center}
+\tableofcontents
+\clearpage
+\section{Executive summary}
+This document is a \emph{cleaned, consolidated companion} to the cumulative audit through V147. It replaces repetitive version-by-version narrative with one authoritative ledger, an evidence boundary, and a concise list of outstanding obligations. It does not alter the original V31 manuscript or erase the historical audit record.
+
+\textbf{What is established.} The reconstructed ledger contains 54 numbered, distinct equation-label references; each occurs exactly once in V31. The cumulative audit documents individual limiting proofs and targeted primary-source checks, including two newly recorded relations (PASS 53 and 54).
+
+\textbf{What is not established.} A unique source label is not a proof of the limiting arrow. The available cumulative record does not yet demonstrate an independent, row-by-row match of all 54 arrows to the original Koekoek--Swarttouw (KLS) scheme, nor a global proof that all eligible directed arrows have been counted. Thus \emph{54 is a recorded total, not a certified exhaustive theorem}.
+
+\section{Scope and decision rules}
+An eligible entry must concern distinct polynomial families, count a directed family pair only once, and correspond to a recognized KLS arrow. Exact specializations may count when independently justified as KLS-recognized arrows. A full certificate for an entry requires: \textbf{K} (authenticated KLS direction and conventions), \textbf{M} (all-degree limit with correct scaling and normalization), \textbf{R} (realization by the printed V31 reverse connection under justified transformations), and \textbf{S} (unique source identification). The mechanical test here verifies S for all 54; it does not assert K, M, and R for all 54.
+
+\section{Corrected authoritative 54-entry ledger}
+The table is reconstructed from the V145 numbered ledger, with the erroneous V145 occurrence counts \emph{recomputed} from the unchanged V31 source. The order and numbers below are authoritative for this consolidated report. ``Occurrence'' counts literal source definitions of the specified equation label, not mathematical proofs.
+\begingroup\footnotesize
+\begin{longtable}{@{}r p{0.46\linewidth} p{0.36\linewidth} r@{}}
+\toprule No. & Recorded directed relation & V31 equation label & Occ.\\
+\midrule\endfirsthead
+\toprule No. & Recorded directed relation & V31 equation label & Occ.\\
+\midrule\endhead
+\bottomrule\endfoot
+1 & Symmetric Jacobi $\ensuremath{\to}$ Hermite & \texttt{eq:v14-jac-herm} & 1 \\
+2 & Normalized continuous $q$-Laguerre $\ensuremath{\to}$ continuous $q$-Hermite & \texttt{eq:qlag-hermite-fwd} & 1 \\
+3 & Continuous $q$-Jacobi $\ensuremath{\to}$ continuous $q$-Hermite & \texttt{eq:JHforward} & 1 \\
+4 & Hahn $\ensuremath{\to}$ Jacobi & \texttt{eq:jacobi-hahn-reverse} & 1 \\
+5 & $q$-Hahn $\ensuremath{\to}$ little $q$-Jacobi & \texttt{eq:ljqh-reverse} & 1 \\
+6 & $q$-Hahn $\ensuremath{\to}$ $q$-Meixner & \texttt{eq:168-D} & 1 \\
+7 & Big $q$-Jacobi $\ensuremath{\to}$ $q$-Meixner & \texttt{eq:169-reverse} & 1 \\
+8 & Big $q$-Jacobi $\ensuremath{\to}$ little $q$-Jacobi & \texttt{eq:ljbj166-reverse} & 1 \\
+9 & Big $q$-Laguerre $\ensuremath{\to}$ little $q$-Laguerre (Wall) & \texttt{eq:wall-big-reverse} & 1 \\
+10 & $q$-Hahn $\ensuremath{\to}$ quantum $q$-Krawtchouk & \texttt{eq:finite-qtmH-reverse} & 1 \\
+11 & $q$-Hahn $\ensuremath{\to}$ ordinary $q$-Krawtchouk & \texttt{eq:finite-KH-reverse} & 1 \\
+12 & Dual $q$-Hahn $\ensuremath{\to}$ dual $q$-Krawtchouk & \texttt{eq:finite-dKdH-reverse} & 1 \\
+13 & Askey--Wilson $\ensuremath{\to}$ big $q$-Jacobi & \texttt{eq:aw-bigqj-reverse} & 1 \\
+14 & Standard $q$-Krawtchouk $\ensuremath{\to}$ alternative $q$-Charlier ($q$-Bessel) & \texttt{eq:qBqK-reverse} & 1 \\
+15 & Standard $q$-Krawtchouk $\ensuremath{\to}$ ordinary $q$-Charlier & \texttt{eq:qCqK-reverse} & 1 \\
+16 & Little $q$-Jacobi $\ensuremath{\to}$ $q$-Bessel (alternative $q$-Charlier) & \texttt{eq:qBlqJ-reverse} & 1 \\
+17 & $q$-Meixner $\ensuremath{\to}$ $q$-Laguerre & \texttt{eq:qLqM-D} & 1 \\
+18 & Little $q$-Jacobi $\ensuremath{\to}$ $q$-Laguerre & \texttt{eq:qLlJ-D} & 1 \\
+19 & Affine $q$-Krawtchouk $\ensuremath{\to}$ little $q$-Laguerre (Wall) & \texttt{eq:wall-affine-reverse} & 1 \\
+20 & Little $q$-Jacobi $\ensuremath{\to}$ little $q$-Laguerre (Wall) & \texttt{eq:wall-lj-reverse} & 1 \\
+21 & Big $q$-Jacobi $\ensuremath{\to}$ big $q$-Laguerre & \texttt{eq:blbj-reverse} & 1 \\
+22 & Continuous $q$-Hahn $\ensuremath{\to}$ $q$-Meixner--Pollaczek & \texttt{eq:cqh-qmp23} & 1 \\
+23 & Al-Salam--Chihara $\ensuremath{\to}$ continuous big $q$-Hermite & \texttt{eq:ASCBH} & 1 \\
+24 & Continuous dual $q$-Hahn $\ensuremath{\to}$ Al-Salam--Chihara & \texttt{eq:CDASC} & 1 \\
+25 & Continuous big $q$-Hermite $\ensuremath{\to}$ continuous $q$-Hermite & \texttt{eq:BHH} & 1 \\
+26 & $q$-Laguerre $\ensuremath{\to}$ Stieltjes--Wigert & \texttt{eq:SWqL-rev} & 1 \\
+27 & Quantum $q$-Krawtchouk $\ensuremath{\to}$ Al-Salam--Carlitz II & \texttt{eq:ASCII-qtm-reverse} & 1 \\
+28 & $q$-Meixner $\ensuremath{\to}$ Al-Salam--Carlitz II & \texttt{eq:ASCII-qM-reverse} & 1 \\
+29 & Askey--Wilson $\ensuremath{\to}$ continuous dual $q$-Hahn & \texttt{eq:AWCD} & 1 \\
+30 & Racah $\ensuremath{\to}$ Hahn & \texttt{eq:racah-to-hahn-grid} & 1 \\
+31 & Racah $\ensuremath{\to}$ dual Hahn & \texttt{eq:racah-dh-reverse} & 1 \\
+32 & Krawtchouk $\ensuremath{\to}$ Hermite & \texttt{eq:v16-k-h} & 1 \\
+33 & Hahn $\ensuremath{\to}$ Meixner & \texttt{eq:hahn-meixner-reverse} & 1 \\
+34 & Hahn $\ensuremath{\to}$ Krawtchouk & \texttt{eq:hahn-kraw-reverse} & 1 \\
+35 & Krawtchouk $\ensuremath{\to}$ Charlier & \texttt{eq:kraw-char-reverse} & 1 \\
+36 & Meixner $\ensuremath{\to}$ Charlier & \texttt{eq:meix-char-reverse} & 1 \\
+37 & Charlier $\to$ Hermite & \texttt{eq:v16-c-h} & 1 \\
+38 & Wilson $\to$ continuous dual Hahn & \texttt{eq:consolidated-w-cdh} & 1 \\
+39 & Meixner--Pollaczek $\to$ Hermite & \texttt{eq:cat-mp-to-hermite-bell} & 1 \\
+40 & Continuous Hahn $\to$ Meixner--Pollaczek & \texttt{eq:consolidated-ch-mp} & 1 \\
+41 & Meixner $\to$ generalized Laguerre & \texttt{eq:meixner-to-laguerre-v61} & 1 \\
+42 & Jacobi $\to$ generalized Laguerre & \texttt{eq:v14-jac-lag} & 1 \\
+43 & Wilson $\to$ Jacobi & \texttt{eq:wilson-to-jac} & 1 \\
+44 & q-Meixner $\to$ ordinary q-Charlier & \texttt{eq:qC-qM-reverse} & 1 \\
+45 & dual q-Hahn $\to$ affine q-Krawtchouk & \texttt{eq:finite-affdH-reverse} & 1 \\
+46 & q-Hahn $\to$ affine q-Krawtchouk & \texttt{eq:finite-affH-reverse} & 1 \\
+47 & q-Racah $\to$ dual q-Hahn & \texttt{eq:finite-dHR-reverse} & 1 \\
+48 & q-Racah $\to$ ordinary q-Krawtchouk & \texttt{eq:finite-KR-reverse} & 1 \\
+49 & q-Racah $\to$ q-Hahn & \texttt{eq:finite-HR-double-D} & 1 \\
+50 & continuous q-Jacobi $\to$ continuous q-Laguerre & \texttt{eq:lag-jacobi-new-rev} & 1 \\
+51 & Al-Salam--Carlitz I $\to$ discrete q-Hermite I & \texttt{eq:dHI-carlitz-rev} & 1 \\
+52 & Al-Salam--Carlitz II $\to$ discrete q-Hermite II & \texttt{eq:dHII-carlitz-rev} & 1 \\
+53 & Al-Salam--Chihara $\to$ continuous $q$-Laguerre & \texttt{eq:lag-asc-hyper-rev51} & 1 \\
+54 & Big $q$-Laguerre $\to$ Al-Salam--Carlitz I & \texttt{eq:ASCI-bL-reverse} & 1 \\
+\end{longtable}\endgroup
+\textbf{Source identity verdict:} 54 distinct labels, 54 unique definitions, zero missing or duplicated label definitions. The original source is \texttt{Askey\_Finite\_Connections\_Revised\_v31(1).tex}.
+
+\section{Candidate dispositions and exclusions}
+\begin{tabular}{@{}p{0.48\linewidth}p{0.46\linewidth}@{}}
+\toprule Candidate directed relation & Current audit disposition\\\midrule
+Big $q$-Laguerre $\to$ Al-Salam--Carlitz I & Recorded PASS 54; normalization correction documented.\\
+Al-Salam--Chihara $\to$ continuous $q$-Laguerre & Recorded PASS 53; exact specialization and KLS recognition documented.\\
+Stieltjes--Wigert $\to$ alternative $q$-Charlier & Excluded: opposite KLS direction; unscaled identity also obstructed.\\
+Stieltjes--Wigert $\to$ ordinary $q$-Charlier & Excluded: opposite KLS direction; fixed-$q$ unscaled identity obstructed.\\
+Jacobi $\to$ continuous Hahn & Excluded: opposite KLS direction.\\
+Meixner $\to$ dual Hahn & Excluded: opposite KLS direction; finite-grid degree caveat.\\
+Pseudo-Jacobi $\to$ continuous Hahn & Excluded: not an independent KLS family arrow.\\
+Jacobi $\to$ generalized Bessel & Polynomial limit established; excluded from original KLS-directed count.\\
+Meixner--Pollaczek $\to$ Laguerre & KLS arrow and transformed limit established; not awarded under strict printed-V31-reverse criterion.\\
+\bottomrule
+\end{tabular}
+
+\section{Material corrections and interpretation}
+\textbf{PASS numbering.} The authoritative ledger lists Jacobi $\to$ Hermite as \textbf{PASS 1} and Wilson $\to$ Jacobi as \textbf{PASS 43}. The V126 description of the Jacobi--Hermite proof as ``PASS 43'' is a historical indexing error; its mathematical content pertains to PASS 1.
+
+\textbf{Occurrence counts.} The V145 table printed zero in its occurrence column despite asserting all labels existed. V146 corrected this reporting defect. The table in this report has been independently regenerated and contains the actual counts.
+
+\textbf{Big $q$-Laguerre normalization.} The V139 calculation uses the corrected V31-normalized relation
+\[
+\lim_{a\to0}\frac{P_n(aqx;a,ab\mid q)}{(aq)^n}=U_n^{(b)}(x;q).
+\]
+The extra $q^{-n}$ relative to the disputed printed form must be disclosed in any KLS crosswalk; do not silently conflate conventions.
+
+\textbf{Meixner--Pollaczek $\to$ Laguerre.} The established KLS limit requires $\phi\to0$, while the V31 printed finite reverse connection fixes $\phi=\pi/2$. A separately derived angle-dependent connection is not automatically a verification of that printed formula.
+
+\textbf{Inventory denominators.} V31 has 117 physical \texttt{\\subsubsection} headings; the prior 72-entry inventory concerns candidate distinct-family headings. Neither number equals the count of eligible directed KLS arrows. The 54 source labels are distributed across 54 headings, leaving 63 physical headings without a recorded PASS label; this is not by itself evidence of 63 missing arrows.
+
+\section{Outstanding certification work}
+\begin{enumerate}
+\item \textbf{KLS crosswalk:} for each of the 54 rows, record and independently authenticate the exact original KLS location, direction, parameter map, argument scaling, and normalization. Mark convention corrections explicitly.
+\item \textbf{Mathematical evidence index:} attach a precise cumulative-audit section or proof pointer to each row, then independently resolve any missing all-degree reverse-coefficient arguments.
+\item \textbf{Global completeness:} check every candidate distinct-family V31 heading for all recognized directed arrows, allowing multiple arrows per heading and none for others; reconcile all exclusions and duplicates.
+\item \textbf{Final sign-off:} issue a definitive count only after the preceding three tests pass; otherwise retain an explicit provisional count and a finite exception list.
+\end{enumerate}
+
+\section{Release decision}
+\textbf{Status: consolidated and editorially corrected; certification still open.} The current record supports \textbf{54 recorded PASS entries} and complete mechanical source traceability. It does \emph{not} justify calling 54 a globally exhaustive, independently authenticated KLS count. This document is intended as a readable front report; the V147 cumulative audit remains the detailed historical proof archive.
+\end{document}
